@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjpipvt5t2foa"]
+
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_8ga8f"]
+[ext_resource type="Texture2D" uid="uid://ddn2rwr7akclj" path="res://Art/floor_1_ma.png" id="1_u5acw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxmkx"]
+atlas = ExtResource("1_u5acw")
+region = Rect2(0, 0, 3072, 2688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jfh4"]
+atlas = ExtResource("1_u5acw")
+region = Rect2(3072, 0, 3072, 2688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q68eo"]
+atlas = ExtResource("1_u5acw")
+region = Rect2(6144, 0, 3072, 2688)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54b5g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxmkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jfh4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q68eo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_8ga8f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_54b5g")
+frame = 2
+frame_progress = 0.0444963

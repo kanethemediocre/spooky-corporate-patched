@@ -146,3 +146,5 @@ frame_progress = 0.938152
 position = Vector2(-9, -16)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_hfvqt")
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1lncc7fn25kw"]
+
+[ext_resource type="Script" path="res://Scenes/floor.gd" id="1_sucrt"]
+[ext_resource type="Texture2D" uid="uid://x1ctvn87mwqm" path="res://Art/floor_1.png" id="2_vfa02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2n16"]
+atlas = ExtResource("2_vfa02")
+region = Rect2(0, 0, 3072, 2688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m3k5"]
+atlas = ExtResource("2_vfa02")
+region = Rect2(3072, 0, 3072, 2688)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb33o"]
+atlas = ExtResource("2_vfa02")
+region = Rect2(6144, 0, 3072, 2688)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8psin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2n16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m3k5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gb33o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Floor" type="Node2D"]
+script = ExtResource("1_sucrt")
+
+[node name="background" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_8psin")

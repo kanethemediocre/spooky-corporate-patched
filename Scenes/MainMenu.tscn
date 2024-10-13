@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://kmjj85cyhk4v"]
 
 [ext_resource type="AudioStream" uid="uid://j0oi1mqp4eyt" path="res://Audio/ChicaGhoulMusic_241005.ogg" id="1_43lxj"]
-[ext_resource type="Script" path="res://Scenes/menu_ui.gd" id="2_f0lrt"]
+[ext_resource type="Script" path="res://Scripts/menu_ui.gd" id="2_f0lrt"]
 [ext_resource type="Theme" uid="uid://dl3v5hf6lki77" path="res://UI Themes/Menu/MainMenuButton.tres" id="2_h2okw"]
 [ext_resource type="Theme" uid="uid://cu0pw7n870jsv" path="res://UI Themes/Menu/Title.tres" id="3_i3ce2"]
 [ext_resource type="Theme" uid="uid://dku7m3f7x5tsc" path="res://UI Themes/Menu/CreditsHeader.tres" id="3_ufib3"]

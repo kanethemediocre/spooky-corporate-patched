@@ -4,6 +4,7 @@ signal hit
 
 #export allows us to set the speed value in the inspector
 @export var speed = 400
+@export var pause_menu: PauseMenu # Pause menu to use.
 var screen_size # Size of the game window.
 
 
@@ -26,6 +27,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	# TODO pause state will need to block normal actions.
+	if Input.is_action_just_pressed("pause"):
+		pause_menu.show_pause(_unpause)
+	
 	var velocity = Vector2.ZERO # The player's movement vector.
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -53,3 +58,12 @@ func _on_body_entered(body):
 	hit.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred("disabled", true)
+
+# Pausing/unpausing functionality.
+func _pause():
+	# TODO pause controls/time here
+	# Show the pause menu, when the menu is exited call _unpause.
+	pause_menu.show_pause(_unpause)
+func _unpause():
+	# TODO unpause controls/time here
+	pass

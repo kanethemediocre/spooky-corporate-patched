@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=4 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
 [ext_resource type="PackedScene" uid="uid://b03yfs8f1rcgh" path="res://Scenes/player.tscn" id="2_tdwjb"]
+[ext_resource type="PackedScene" uid="uid://c41j05v5ltj4f" path="res://Scenes/Menus/PauseMenu.tscn" id="3_ky1hj"]
 
 [node name="Main" type="Node"]
 
+[node name="Pause Menu" parent="." instance=ExtResource("3_ky1hj")]
+
 [node name="Level" parent="." instance=ExtResource("1_bdubd")]
 
-[node name="Player" parent="." instance=ExtResource("2_tdwjb")]
+[node name="Player" parent="." node_paths=PackedStringArray("pause_menu") instance=ExtResource("2_tdwjb")]
+pause_menu = NodePath("../Pause Menu")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://jlehwaifg3n3"]
+
+[ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
+[ext_resource type="Texture2D" uid="uid://ccr5qs467ed8i" path="res://Art/floor_1_foreground.png" id="2_ir5kf"]
+
+[node name="Level" type="Node"]
+
+[node name="background_image" type="Sprite2D" parent="."]
+texture = ExtResource("1_lqlnj")
+
+[node name="foreground_image" type="Sprite2D" parent="."]
+texture = ExtResource("2_ir5kf")

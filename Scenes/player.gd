@@ -1,5 +1,4 @@
 extends Area2D
-signal hit
 
 
 #export allows us to set the speed value in the inspector
@@ -55,7 +54,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	hide() # Player disappears after being hit.
-	hit.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.
 	$CollisionShape2D.set_deferred("disabled", true)
 
@@ -66,4 +64,15 @@ func _pause():
 	pause_menu.show_pause(_unpause)
 func _unpause():
 	# TODO unpause controls/time here
+	pass
+
+# Called when an area is entered by the player shape.
+func _on_area_entered(area: Area2D) -> void:
+	if area is HauntedProp:
+		_start_death_sequence()
+
+func _start_death_sequence() -> void:
+	# TODO more elaborate death sequence
+	# For now just hide the player.
+	hide()
 	pass

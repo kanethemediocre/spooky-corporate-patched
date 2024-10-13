@@ -148,3 +148,5 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_hfvqt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

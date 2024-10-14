@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=7 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
-[ext_resource type="PackedScene" uid="uid://b03yfs8f1rcgh" path="res://Scenes/player.tscn" id="2_tdwjb"]
 [ext_resource type="PackedScene" uid="uid://c41j05v5ltj4f" path="res://Scenes/Menus/PauseMenu.tscn" id="3_ky1hj"]
 [ext_resource type="PackedScene" uid="uid://vrdntxt78k3k" path="res://Scenes/Hazards/HauntedProp.tscn" id="4_82u5g"]
 [ext_resource type="Texture2D" uid="uid://d2bfv41q5o3x2" path="res://Art/boo.png" id="5_bq1cj"]
@@ -23,9 +22,6 @@ animations = [{
 [node name="Pause Menu" parent="." instance=ExtResource("3_ky1hj")]
 
 [node name="Level" parent="." instance=ExtResource("1_bdubd")]
-
-[node name="Player" parent="." node_paths=PackedStringArray("pause_menu") instance=ExtResource("2_tdwjb")]
-pause_menu = NodePath("../Pause Menu")
 
 [node name="HauntedProp" parent="." instance=ExtResource("4_82u5g")]
 

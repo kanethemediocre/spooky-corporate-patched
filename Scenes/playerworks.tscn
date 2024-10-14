@@ -14,3 +14,10 @@ texture = ExtResource("1_chcpm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1fhjg")
+
+[node name="Interaction Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
+shape = SubResource("RectangleShape2D_1fhjg")
+
+[connection signal="area_entered" from="Interaction Area" to="." method="_on_area_entered"]

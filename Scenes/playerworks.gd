@@ -21,7 +21,7 @@ func _ready():
 	#position = pos
 	show()
 	#$AnimatedSprite2D.play()
-	#$CollisionShape2D.disabled = false
+	$CollisionShape2D.disabled = false #This might not do anything
 	#hide()
 
 
@@ -29,30 +29,32 @@ func _ready():
 #func _process(delta):
 func _physics_process(delta: float) -> void:
 	# TODO pause state will need to block normal actions.
-	#if Input.is_action_just_pressed("pause"):
-	#	pause_menu.show_pause(_unpause)
-	#var try = pause_menu.is_paused
-	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("move_right"):
-		velocity.x += 1
-	if Input.is_action_pressed("move_left"):
-		velocity.x -= 1
-	if Input.is_action_pressed("move_down"):
-		velocity.y += 1
-	if Input.is_action_pressed("move_up"):
-		velocity.y -= 1
+	if Input.is_action_just_pressed("pause"):
+		pause_menu.show_pause(_unpause)
+	if pause_menu.is_paused:
+		pass
+	else:
+		var velocity = Vector2.ZERO # The player's movement vector.
+		if Input.is_action_pressed("move_right"):
+			velocity.x += 1
+		if Input.is_action_pressed("move_left"):
+			velocity.x -= 1
+		if Input.is_action_pressed("move_down"):
+			velocity.y += 1
+		if Input.is_action_pressed("move_up"):
+			velocity.y -= 1
 
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		#$AnimatedSprite2D.play()
-		#$AnimatedSprite2D.animation = "walk"
-		#$AnimatedSprite2D.flip_h = velocity.x > 0
-	#else:
-		#$AnimatedSprite2D.animation = "idle"
-	
-	position += velocity * delta
-	move_and_slide()
-	#position = position.clamp(Vector2.ZERO, screen_size)
+		if velocity.length() > 0:
+			velocity = velocity.normalized() * speed
+			#$AnimatedSprite2D.play()
+			#$AnimatedSprite2D.animation = "walk"
+			#$AnimatedSprite2D.flip_h = velocity.x > 0
+		#else:
+			#$AnimatedSprite2D.animation = "idle"
+		
+		position += velocity * delta
+		move_and_slide()
+		#position = position.clamp(Vector2.ZERO, screen_size)
 
 
 func _on_body_entered(body):

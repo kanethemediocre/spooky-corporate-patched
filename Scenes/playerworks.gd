@@ -20,7 +20,7 @@ func _ready():
 	#the above line doesn't seem to do anything.  I need to use the project settings to set the window to something reasonable.
 	#position = pos
 	show()
-	#$AnimatedSprite2D.play()
+	$AnimatedSprite2D.play()
 	$CollisionShape2D.disabled = false #This might not do anything
 	#hide()
 
@@ -28,13 +28,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 func _physics_process(delta: float) -> void:
+	# TODO pause state will need to block normal actions.
+	if Input.is_action_just_pressed("pause"):
+		pause_menu.show_pause(_unpause)
 	if pause_menu.is_paused:
-		if Input.is_action_just_pressed("pause"):
-			pause_menu.unpause()
+		pass
 	else:
-		if Input.is_action_just_pressed("pause"):
-			pause_menu.pause()
-		
 		var velocity = Vector2.ZERO # The player's movement vector.
 		if Input.is_action_pressed("move_right"):
 			velocity.x += 1
@@ -47,11 +46,11 @@ func _physics_process(delta: float) -> void:
 
 		if velocity.length() > 0:
 			velocity = velocity.normalized() * speed
-			#$AnimatedSprite2D.play()
-			#$AnimatedSprite2D.animation = "walk"
-			#$AnimatedSprite2D.flip_h = velocity.x > 0
-		#else:
-			#$AnimatedSprite2D.animation = "idle"
+			$AnimatedSprite2D.play()
+			$AnimatedSprite2D.animation = "walk"
+			$AnimatedSprite2D.flip_h = velocity.x > 0
+		else:
+			$AnimatedSprite2D.animation = "idle"
 		
 		position += velocity * delta
 		move_and_slide()

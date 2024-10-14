@@ -45,5 +45,5 @@ layout_mode = 2
 theme = ExtResource("3_pb0od")
 text = "Main Menu"
 
-[connection signal="pressed" from="Menu UI/Main Buttons/Continue Button" to="." method="unpause"]
+[connection signal="pressed" from="Menu UI/Main Buttons/Continue Button" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="Menu UI/Main Buttons/Main Menu Button" to="." method="_on_main_menu_button_pressed"]

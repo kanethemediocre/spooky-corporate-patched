@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=9 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
 [ext_resource type="PackedScene" uid="uid://b03yfs8f1rcgh" path="res://Scenes/player.tscn" id="2_tdwjb"]
 [ext_resource type="PackedScene" uid="uid://c41j05v5ltj4f" path="res://Scenes/Menus/PauseMenu.tscn" id="3_ky1hj"]
 [ext_resource type="PackedScene" uid="uid://vrdntxt78k3k" path="res://Scenes/Hazards/HauntedProp.tscn" id="4_82u5g"]
 [ext_resource type="Texture2D" uid="uid://d2bfv41q5o3x2" path="res://Art/boo.png" id="5_bq1cj"]
+[ext_resource type="PackedScene" uid="uid://drxb2f3432d3n" path="res://Scenes/wall.tscn" id="6_sriq3"]
 [ext_resource type="PackedScene" uid="uid://b411u13bricjf" path="res://Scenes/playerworks.tscn" id="7_74bnn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_08qhs"]
@@ -35,7 +36,14 @@ polygon = PackedVector2Array(52, -74, -97, -73, -104, 50, -89, 109, 90, 117, 86,
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HauntedProp"]
 sprite_frames = SubResource("SpriteFrames_08qhs")
 
+[node name="Wall" parent="." instance=ExtResource("6_sriq3")]
+position = Vector2(860, 462)
+
+[node name="Wall2" parent="." instance=ExtResource("6_sriq3")]
+position = Vector2(764, 460)
+
+[node name="Wall3" parent="." instance=ExtResource("6_sriq3")]
+position = Vector2(764, 460)
+
 [node name="playerworks" parent="." instance=ExtResource("7_74bnn")]
 position = Vector2(379, 251)
-
-[node name="Camera2D" type="Camera2D" parent="playerworks"]

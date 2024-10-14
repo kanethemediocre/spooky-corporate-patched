@@ -2,7 +2,7 @@ extends Node2D
 class_name PauseMenu
 
 @export var pause_layer: CanvasLayer
-var is_paused: bool
+@export var is_paused: bool
 var unpause_callback : Callable
 
 # By default hide the pause menu.

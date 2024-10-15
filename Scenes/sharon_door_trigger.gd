@@ -1,9 +1,5 @@
-extends Node
-var iWedge = 0
-var iSharonKey = 0
-var iFlashlight = 0
-var NeedToOpenSharonDoor = false
-
+extends Area2D
+class_name SharonDoorTrigger
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

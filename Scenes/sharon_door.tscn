@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdwkn1gy0sqmc"]
+
+[ext_resource type="Texture2D" uid="uid://b3joxord0c127" path="res://Art/SharonOfficeDoorClosed.png" id="2_203nj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7woit"]
+size = Vector2(64, 128)
+
+[node name="SharonDoor" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7woit")
+
+[node name="ClosedSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_203nj")

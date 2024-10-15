@@ -80,8 +80,13 @@ func _on_area_entered(area: Area2D) -> void:
 		_start_death_sequence()
 	if area is WedgeItem:
 		Gvars.iWedge =  Gvars.iWedge + 1
-		area.position.x = 100000
-
+		area.position.x = 1000000
+	if area is SharonKeyItem:
+		Gvars.iSharonKey = Gvars.iSharonKey+1
+		area.position.x = 1000000
+	if area is SharonDoorTrigger:
+		if Gvars.iSharonKey > 0:
+			Gvars.NeedToOpenSharonDoor = true #Door is opened in main node script
 func _start_death_sequence() -> void:
 	# TODO more elaborate death sequence
 	# For now just hide the player.

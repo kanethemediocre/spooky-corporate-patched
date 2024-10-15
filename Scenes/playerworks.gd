@@ -28,12 +28,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 func _physics_process(delta: float) -> void:
-	# TODO pause state will need to block normal actions.
-	if Input.is_action_just_pressed("pause"):
-		pause_menu.show_pause(_unpause)
 	if pause_menu.is_paused:
-		pass
+		if Input.is_action_just_pressed("pause"):
+			pause_menu.unpause()
 	else:
+		if Input.is_action_just_pressed("pause"):
+			pause_menu.pause()
+		
 		var velocity = Vector2.ZERO # The player's movement vector.
 		if Input.is_action_pressed("move_right"):
 			velocity.x += 1

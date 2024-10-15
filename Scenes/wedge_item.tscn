@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://12isitlxwfp4"]
+
+[ext_resource type="Texture2D" uid="uid://bn1mxidtti4pq" path="res://Art/wedge.png" id="1_l5pmc"]
+[ext_resource type="Script" path="res://Scenes/wedge_item.gd" id="1_njbh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fatt1"]
+size = Vector2(128, 128)
+
+[node name="WedgeItem" type="Area2D"]
+script = ExtResource("1_njbh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fatt1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_l5pmc")

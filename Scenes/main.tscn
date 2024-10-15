@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=8 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
 [ext_resource type="PackedScene" uid="uid://c41j05v5ltj4f" path="res://Scenes/Menus/PauseMenu.tscn" id="3_ky1hj"]
 [ext_resource type="PackedScene" uid="uid://vrdntxt78k3k" path="res://Scenes/Hazards/HauntedProp.tscn" id="4_82u5g"]
 [ext_resource type="Texture2D" uid="uid://d2bfv41q5o3x2" path="res://Art/boo.png" id="5_bq1cj"]
+[ext_resource type="PackedScene" uid="uid://12isitlxwfp4" path="res://Scenes/wedge_item.tscn" id="6_2ie3y"]
 [ext_resource type="PackedScene" uid="uid://b411u13bricjf" path="res://Scenes/playerworks.tscn" id="7_74bnn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_08qhs"]
@@ -36,3 +37,9 @@ position = Vector2(379, 251)
 pause_menu = NodePath("../Pause Menu")
 
 [node name="Camera2D" type="Camera2D" parent="playerworks"]
+
+[node name="WedgeItem" parent="." instance=ExtResource("6_2ie3y")]
+position = Vector2(972, -807)
+
+[node name="WedgeItem2" parent="." instance=ExtResource("6_2ie3y")]
+position = Vector2(-1064, 348)

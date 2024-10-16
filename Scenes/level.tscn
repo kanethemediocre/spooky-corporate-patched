@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=20 format=3 uid="uid://jlehwaifg3n3"]
 
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
 [ext_resource type="Texture2D" uid="uid://ccr5qs467ed8i" path="res://Art/floor_1_foreground.png" id="2_ir5kf"]
+[ext_resource type="Texture2D" uid="uid://c4fuveentejnn" path="res://Art/conferenceroombackground.png" id="3_6742c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -42,6 +43,16 @@ size = Vector2(376, 195)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2duwj"]
 size = Vector2(200, 200)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bh6lp"]
+radius = 220.0
+height = 4760.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvoaq"]
+size = Vector2(1299, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85d4p"]
+size = Vector2(128, 920)
+
 [node name="Level" type="Node"]
 
 [node name="background_image" type="Sprite2D" parent="."]
@@ -49,6 +60,7 @@ texture = ExtResource("1_lqlnj")
 metadata/_edit_lock_ = true
 
 [node name="foreground_image" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("2_ir5kf")
 metadata/_edit_lock_ = true
 
@@ -130,3 +142,29 @@ shape = SubResource("RectangleShape2D_pj8t5")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="midwall7"]
 position = Vector2(-848, -114)
 shape = SubResource("RectangleShape2D_2duwj")
+
+[node name="ConferenceBackground" type="Sprite2D" parent="."]
+position = Vector2(2459, 1791)
+texture = ExtResource("3_6742c")
+
+[node name="conftable" type="StaticBody2D" parent="."]
+position = Vector2(1945, 743)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conftable"]
+position = Vector2(-7, 855)
+shape = SubResource("CapsuleShape2D_bh6lp")
+
+[node name="conftop" type="StaticBody2D" parent="."]
+position = Vector2(1722, -1104)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="conftop"]
+position = Vector2(249.5, 2.5)
+shape = SubResource("RectangleShape2D_wvoaq")
+
+[node name="confright1" type="StaticBody2D" parent="."]
+position = Vector2(2597, -495)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="confright1"]
+position = Vector2(-36, -6)
+shape = SubResource("RectangleShape2D_85d4p")
+metadata/_edit_lock_ = true

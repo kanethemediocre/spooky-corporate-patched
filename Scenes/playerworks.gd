@@ -81,9 +81,13 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is WedgeItem:
 		Gvars.iWedge =  Gvars.iWedge + 1
 		area.position.x = 1000000
+		Gvars.CurrentMessage = "This door stop might come in handy."
+		Gvars.MessageTime = Gvars.time
 	if area is SharonKeyItem:
 		Gvars.iSharonKey = Gvars.iSharonKey+1
 		area.position.x = 1000000
+		Gvars.CurrentMessage = "I've always wondered what was in Sharon's office."
+		Gvars.MessageTime = Gvars.time
 	if area is SharonDoorTrigger:
 		if Gvars.iSharonKey > 0:
 			Gvars.NeedToOpenSharonDoor = true #Door is opened in main node script

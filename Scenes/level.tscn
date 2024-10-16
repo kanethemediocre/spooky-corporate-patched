@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=22 format=3 uid="uid://jlehwaifg3n3"]
 
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
 [ext_resource type="Texture2D" uid="uid://ccr5qs467ed8i" path="res://Art/floor_1_foreground.png" id="2_ir5kf"]
 [ext_resource type="Texture2D" uid="uid://c4fuveentejnn" path="res://Art/conferenceroombackground.png" id="3_6742c"]
+[ext_resource type="Texture2D" uid="uid://d00wawl0gv8eh" path="res://Art/accountingbackground.png" id="4_pfoq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -51,7 +52,10 @@ height = 4760.0
 size = Vector2(1299, 205)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85d4p"]
-size = Vector2(128, 920)
+size = Vector2(163, 725)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvxfo"]
+size = Vector2(186, 3714)
 
 [node name="Level" type="Node"]
 
@@ -66,85 +70,98 @@ metadata/_edit_lock_ = true
 
 [node name="topwall" type="StaticBody2D" parent="."]
 position = Vector2(-898, -1098)
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="topwall"]
 position = Vector2(900, 0)
 shape = SubResource("RectangleShape2D_6y7wf")
 
 [node name="leftwall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftwall"]
 position = Vector2(-1132.5, -503)
 shape = SubResource("RectangleShape2D_b57p8")
 
 [node name="otherleftwall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="otherleftwall"]
 position = Vector2(-1221, 490)
 shape = SubResource("RectangleShape2D_sl22a")
 
 [node name="bottomwall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bottomwall"]
 position = Vector2(72.25, 913.25)
 shape = SubResource("RectangleShape2D_0pb0t")
 
 [node name="rightwall1" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightwall1"]
 position = Vector2(1224, -520)
 shape = SubResource("RectangleShape2D_drkka")
 
 [node name="rightwall2" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightwall2"]
 position = Vector2(1221.5, 553.5)
 shape = SubResource("RectangleShape2D_dm55e")
 
 [node name="midwall1" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="midwall1"]
 position = Vector2(867.25, 455)
 shape = SubResource("RectangleShape2D_ruyap")
 
 [node name="midwall2" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="midwall2"]
 position = Vector2(-849, 487)
 shape = SubResource("RectangleShape2D_cxgeu")
 
 [node name="midwall3" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="midwall3"]
 position = Vector2(34.25, -500.375)
 shape = SubResource("RectangleShape2D_05ktr")
 
 [node name="midwall4" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="midwall4"]
 position = Vector2(592.75, -682.75)
 shape = SubResource("RectangleShape2D_781q4")
 
 [node name="midwall5" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="midwall5"]
 position = Vector2(634.25, -315.5)
 shape = SubResource("RectangleShape2D_ol508")
 
 [node name="midwall6" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="midwall6"]
 position = Vector2(-221, -133.5)
 shape = SubResource("RectangleShape2D_pj8t5")
 
 [node name="midwall7" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="midwall7"]
 position = Vector2(-848, -114)
 shape = SubResource("RectangleShape2D_2duwj")
 
 [node name="ConferenceBackground" type="Sprite2D" parent="."]
-position = Vector2(2459, 1791)
+position = Vector2(1993, 1795)
 texture = ExtResource("3_6742c")
 
 [node name="conftable" type="StaticBody2D" parent="."]
@@ -165,6 +182,16 @@ shape = SubResource("RectangleShape2D_wvoaq")
 position = Vector2(2597, -495)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="confright1"]
-position = Vector2(-36, -6)
+position = Vector2(-14.5, -131.5)
 shape = SubResource("RectangleShape2D_85d4p")
+
+[node name="confright2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="confright2"]
+position = Vector2(2581, 2004)
+shape = SubResource("RectangleShape2D_mvxfo")
+
+[node name="AccountingBackground" type="Sprite2D" parent="."]
+position = Vector2(4163, 293)
+texture = ExtResource("4_pfoq2")
 metadata/_edit_lock_ = true

@@ -138,7 +138,6 @@ size = Vector2(155, 2427)
 [node name="Level" type="Node"]
 
 [node name="background_image" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("1_lqlnj")
 metadata/_edit_lock_ = true
 
@@ -205,13 +204,11 @@ position = Vector2(50, 984)
 shape = SubResource("RectangleShape2D_2duwj")
 
 [node name="ConferenceBackground" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1993, 1795)
 texture = ExtResource("3_6742c")
 metadata/_edit_lock_ = true
 
 [node name="conftable" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(1945, 743)
 metadata/_edit_lock_ = true
 
@@ -220,7 +217,6 @@ position = Vector2(-7, 855)
 shape = SubResource("CapsuleShape2D_bh6lp")
 
 [node name="confwalls" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(1722, -1104)
 metadata/_edit_lock_ = true
 
@@ -257,13 +253,11 @@ position = Vector2(845.25, 5144.5)
 shape = SubResource("RectangleShape2D_t3x2y")
 
 [node name="AccountingBackground" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(4163, 293)
 texture = ExtResource("4_pfoq2")
 metadata/_edit_lock_ = true
 
 [node name="AccountingWalls" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(2704, -911)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AccountingWalls"]
@@ -311,12 +305,10 @@ position = Vector2(2867, 526)
 shape = SubResource("RectangleShape2D_op7a0")
 
 [node name="ComplaintsBackground" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(61, 2764)
 texture = ExtResource("5_2a4tj")
 
 [node name="ComplaintsWalls" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComplaintsWalls"]
 position = Vector2(-1226.88, 2795.63)

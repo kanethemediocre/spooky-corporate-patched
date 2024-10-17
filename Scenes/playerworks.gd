@@ -32,9 +32,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if (Gvars.time - Gvars.phonetime > 1000):
+	if Input.is_action_just_pressed("inventory"):
+		Gvars.inventorytime = Gvars.time
+		$Pocket.visible = true
+		if Gvars.iWedge>0:
+			$iWedge.visible = true
+		if Gvars.iSharonKey>0:
+			$iSharonKey.visible = true
+	if (Gvars.time - Gvars.phonetime > 300):
 		$Phone.visible = false
 		$PhoneVideo1.visible = false
+		Gvars.phonetime = Gvars.time
+	if (Gvars.time - Gvars.inventorytime > 200):
+		$Pocket.visible = false
+		$iWedge.visible = false
+		$iSharonKey.visible = false
 		Gvars.phonetime = Gvars.time
 func _physics_process(delta: float) -> void:
 	if pause_menu.is_paused:

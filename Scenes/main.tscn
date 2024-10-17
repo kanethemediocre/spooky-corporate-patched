@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=13 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_7emmv"]
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bbtitbud8yvhh" path="res://Scenes/sharon_key_item.tscn" id="7_crjwk"]
 [ext_resource type="PackedScene" uid="uid://bhqe4ecrawpkr" path="res://Scenes/sharon_door_trigger.tscn" id="8_mkjxo"]
 [ext_resource type="PackedScene" uid="uid://bdwkn1gy0sqmc" path="res://Scenes/sharon_door.tscn" id="8_tbj5v"]
+[ext_resource type="PackedScene" uid="uid://47iv2jh5n8rk" path="res://Scenes/copy_monster.tscn" id="11_ulbub"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_08qhs"]
 animations = [{
@@ -54,10 +55,13 @@ position = Vector2(972, -807)
 position = Vector2(-1064, 348)
 
 [node name="SharonKeyItem" parent="." instance=ExtResource("7_crjwk")]
-position = Vector2(-421, -843)
+position = Vector2(-751, -826)
 
 [node name="SharonDoorTrigger" parent="." instance=ExtResource("8_mkjxo")]
-position = Vector2(4559, 344)
+position = Vector2(4540, 303)
 
 [node name="SharonDoor" parent="." instance=ExtResource("8_tbj5v")]
-position = Vector2(4548, 251)
+position = Vector2(4532, 289)
+
+[node name="CopyMonster" parent="." instance=ExtResource("11_ulbub")]
+position = Vector2(5126, -426)

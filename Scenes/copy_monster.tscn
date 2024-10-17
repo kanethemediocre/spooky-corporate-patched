@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://47iv2jh5n8rk"]
+
+[ext_resource type="Texture2D" uid="uid://dexjfj3edc2cv" path="res://Art/HauntedCopierWalk4x1.png" id="1_328wr"]
+[ext_resource type="Script" path="res://Scenes/copy_monster.gd" id="1_g0unm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cu7c"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq8m5"]
+atlas = ExtResource("1_328wr")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8alo"]
+atlas = ExtResource("1_328wr")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wssqs"]
+atlas = ExtResource("1_328wr")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13kpd"]
+atlas = ExtResource("1_328wr")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjan7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq8m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8alo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wssqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13kpd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CopyMonster" type="CharacterBody2D"]
+floor_block_on_wall = false
+script = ExtResource("1_g0unm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5cu7c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gjan7")

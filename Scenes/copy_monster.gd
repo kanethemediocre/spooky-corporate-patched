@@ -1,0 +1,33 @@
+extends CharacterBody2D
+
+
+const speed = 150.0
+var xvel = 0
+var yvel = 0
+var rng = RandomNumberGenerator.new()
+
+func _physics_process(delta: float) -> void:
+	
+	
+	if Gvars.time%37==1:
+		xvel = 2*rng.randf()-1
+		yvel = 2*rng.randf()-1
+		if (rng.randf()>0.5):
+			xvel = 0-position.x#todo difference in x position player to monster 
+			yvel = 0-position.y#todo difference in y position player to monster
+	velocity.x = xvel
+	velocity.y = yvel
+	print(xvel)
+	print(yvel)
+	print(".")
+
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed
+		$AnimatedSprite2D.play()
+		#$AnimatedSprite2D.animation = "walk"
+		#$AnimatedSprite2D.flip_h = velocity.x > 0
+	#else:
+		#$AnimatedSprite2D.animation = "idle"
+	
+	position += velocity * delta
+	move_and_slide()

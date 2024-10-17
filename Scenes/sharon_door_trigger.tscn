@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/sharon_door_trigger.gd" id="1_ni0y5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1apa"]
-size = Vector2(256, 256)
+size = Vector2(400, 256)
 
 [node name="SharonDoorTrigger" type="Area2D"]
 script = ExtResource("1_ni0y5")

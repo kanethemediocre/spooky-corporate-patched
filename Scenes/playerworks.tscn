@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dd4d8h5x2sv73" path="res://Art/character.png" id="3_nlbw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhjg"]
-size = Vector2(120, 230)
+size = Vector2(121, 203)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_faf3s"]
 atlas = ExtResource("3_nlbw0")
@@ -139,6 +139,7 @@ font_color = Color(0, 0, 0, 1)
 script = ExtResource("1_sl1oe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 13.5)
 shape = SubResource("RectangleShape2D_1fhjg")
 metadata/_edit_lock_ = true
 
@@ -147,7 +148,6 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
 shape = SubResource("RectangleShape2D_1fhjg")
-metadata/_edit_lock_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)

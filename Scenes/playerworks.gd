@@ -25,12 +25,17 @@ func _ready():
 	#position = pos
 	show()
 	$AnimatedSprite2D.play()
+	$PhoneVideo1.play()
 	$CollisionShape2D.disabled = false #This might not do anything
 	#hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
+	if (Gvars.time - Gvars.phonetime > 1000):
+		$Phone.visible = false
+		$PhoneVideo1.visible = false
+		Gvars.phonetime = Gvars.time
 func _physics_process(delta: float) -> void:
 	if pause_menu.is_paused:
 		if Input.is_action_just_pressed("pause"):
@@ -105,6 +110,10 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is SharonDoorTrigger:
 		if Gvars.iSharonKey > 0:
 			Gvars.NeedToOpenSharonDoor = true #Door is opened in main node script
+	if area is TimeCamTrigger1:
+		$Phone.visible = true
+		$PhoneVideo1.visible = true
+		Gvars.phonetime = Gvars.time
 func _start_death_sequence() -> void:
 	$AnimatedSprite2D.animation = "death"
 	dying = true

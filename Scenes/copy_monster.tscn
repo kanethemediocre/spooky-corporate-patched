@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://47iv2jh5n8rk"]
+[gd_scene load_steps=11 format=3 uid="uid://47iv2jh5n8rk"]
 
 [ext_resource type="Texture2D" uid="uid://dexjfj3edc2cv" path="res://Art/HauntedCopierWalk4x1.png" id="1_328wr"]
 [ext_resource type="Script" path="res://Scenes/copy_monster.gd" id="1_g0unm"]
+[ext_resource type="Script" path="res://Scenes/copy_monster_hurt_zone.gd" id="3_e27o5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cu7c"]
 size = Vector2(128, 128)
@@ -42,6 +43,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmcq3"]
+size = Vector2(150, 150)
+
 [node name="CopyMonster" type="CharacterBody2D"]
 floor_block_on_wall = false
 script = ExtResource("1_g0unm")
@@ -51,3 +55,9 @@ shape = SubResource("RectangleShape2D_5cu7c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gjan7")
+
+[node name="CopyMonsterHurtZone" type="Area2D" parent="."]
+script = ExtResource("3_e27o5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CopyMonsterHurtZone"]
+shape = SubResource("RectangleShape2D_qmcq3")

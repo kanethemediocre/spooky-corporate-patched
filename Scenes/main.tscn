@@ -55,7 +55,7 @@ position = Vector2(972, -807)
 position = Vector2(-1064, 348)
 
 [node name="SharonKeyItem" parent="." instance=ExtResource("7_crjwk")]
-position = Vector2(4012, 552)
+position = Vector2(-526, -868)
 
 [node name="SharonDoorTrigger" parent="." instance=ExtResource("8_mkjxo")]
 position = Vector2(4540, 303)

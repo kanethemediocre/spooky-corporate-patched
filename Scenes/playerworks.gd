@@ -32,7 +32,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 func _physics_process(delta: float) -> void:
-	#var try = Gvars.iWedge+4
 	if pause_menu.is_paused:
 		if Input.is_action_just_pressed("pause"):
 			pause_menu.unpause()
@@ -68,7 +67,8 @@ func _physics_process(delta: float) -> void:
 			position += velocity * delta
 			move_and_slide()
 		
-		#position = position.clamp(Vector2.ZERO, screen_size)
+	Gvars.px = position.x
+	Gvars.py = position.y
 
 
 func _on_body_entered(body):
@@ -89,6 +89,8 @@ func _unpause():
 # Called when an area is entered by the player shape.
 func _on_area_entered(area: Area2D) -> void:
 	if area is HauntedProp:
+		_start_death_sequence()
+	if area is CopyMonsterHurtZone:
 		_start_death_sequence()
 	if area is WedgeItem:
 		Gvars.iWedge =  Gvars.iWedge + 1

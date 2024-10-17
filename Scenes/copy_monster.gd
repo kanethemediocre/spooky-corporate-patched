@@ -13,8 +13,8 @@ func _physics_process(delta: float) -> void:
 		xvel = 2*rng.randf()-1
 		yvel = 2*rng.randf()-1
 		if (rng.randf()>0.5):
-			xvel = 0-position.x#todo difference in x position player to monster 
-			yvel = 0-position.y#todo difference in y position player to monster
+			xvel = Gvars.px-position.x#todo difference in x position player to monster 
+			yvel = Gvars.py-position.y#todo difference in y position player to monster
 	velocity.x = xvel
 	velocity.y = yvel
 	print(xvel)

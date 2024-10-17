@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b411u13bricjf"]
+[gd_scene load_steps=31 format=3 uid="uid://b411u13bricjf"]
 
 [ext_resource type="Script" path="res://Scenes/playerworks.gd" id="1_sl1oe"]
 [ext_resource type="Texture2D" uid="uid://ke2qhwmrud2t" path="res://Art/speechbubble1.png" id="3_hghet"]
@@ -6,6 +6,38 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhjg"]
 size = Vector2(121, 203)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo3at"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(0, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwqbe"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(1920, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyk5y"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(3840, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdqfg"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(5760, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx5y7"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(7680, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sfsi"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(9600, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk24v"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(11520, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0nqx"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(13440, 3840, 1920, 1920)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_faf3s"]
 atlas = ExtResource("3_nlbw0")
@@ -73,6 +105,35 @@ region = Rect2(13440, 0, 1920, 1920)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jfq7k"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yo3at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwqbe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyk5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdqfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx5y7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sfsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk24v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0nqx")
+}],
+"loop": true,
+"name": &"death",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_faf3s")
@@ -152,7 +213,7 @@ shape = SubResource("RectangleShape2D_1fhjg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_jfq7k")
-animation = &"walk"
+animation = &"death"
 metadata/_edit_lock_ = true
 
 [node name="SpeechBubble" type="Sprite2D" parent="."]

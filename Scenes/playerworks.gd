@@ -5,6 +5,10 @@ extends CharacterBody2D
 @export var speed = 400
 @export var pause_menu: PauseMenu # Pause menu to use.
 var screen_size # Size of the game window.
+var dying = false
+var deadtime = 0
+var spawnx = 4000
+var spawny = 1000
 
 
 #func start(pos):
@@ -28,34 +32,42 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 func _physics_process(delta: float) -> void:
-	var try = Gvars.iWedge+4
+	#var try = Gvars.iWedge+4
 	if pause_menu.is_paused:
 		if Input.is_action_just_pressed("pause"):
 			pause_menu.unpause()
 	else:
 		if Input.is_action_just_pressed("pause"):
 			pause_menu.pause()
-		
-		var velocity = Vector2.ZERO # The player's movement vector.
-		if Input.is_action_pressed("move_right"):
-			velocity.x += 1
-		if Input.is_action_pressed("move_left"):
-			velocity.x -= 1
-		if Input.is_action_pressed("move_down"):
-			velocity.y += 1
-		if Input.is_action_pressed("move_up"):
-			velocity.y -= 1
-
-		if velocity.length() > 0:
-			velocity = velocity.normalized() * speed
-			$AnimatedSprite2D.play()
-			$AnimatedSprite2D.animation = "walk"
-			$AnimatedSprite2D.flip_h = velocity.x > 0
+		if dying:
+			if (Gvars.time - deadtime > 120):
+				dying = false
+				position.x = spawnx
+				position.y = spawny
+				$AnimatedSprite2D.animation = "idle"
+				pass#respawn here
 		else:
-			$AnimatedSprite2D.animation = "idle"
+			var velocity = Vector2.ZERO # The player's movement vector.
+			if Input.is_action_pressed("move_right"):
+				velocity.x += 1
+			if Input.is_action_pressed("move_left"):
+				velocity.x -= 1
+			if Input.is_action_pressed("move_down"):
+				velocity.y += 1
+			if Input.is_action_pressed("move_up"):
+				velocity.y -= 1
+
+			if velocity.length() > 0:
+				velocity = velocity.normalized() * speed
+				$AnimatedSprite2D.play()
+				$AnimatedSprite2D.animation = "walk"
+				$AnimatedSprite2D.flip_h = velocity.x > 0
+			else:
+				$AnimatedSprite2D.animation = "idle"
+			
+			position += velocity * delta
+			move_and_slide()
 		
-		position += velocity * delta
-		move_and_slide()
 		#position = position.clamp(Vector2.ZERO, screen_size)
 
 
@@ -92,7 +104,9 @@ func _on_area_entered(area: Area2D) -> void:
 		if Gvars.iSharonKey > 0:
 			Gvars.NeedToOpenSharonDoor = true #Door is opened in main node script
 func _start_death_sequence() -> void:
-	# TODO more elaborate death sequence
+	$AnimatedSprite2D.animation = "death"
+	dying = true
+	deadtime = Gvars.time
 	# For now just hide the player.
-	hide()
+	#hide()
 	pass

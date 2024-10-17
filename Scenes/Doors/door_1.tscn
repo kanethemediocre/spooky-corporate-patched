@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://v5kd5l8fe5kc"]
+
+[ext_resource type="Script" path="res://Scenes/Doors/door.gd" id="1_5ik7k"]
+[ext_resource type="Texture2D" uid="uid://dgllofuu2wy5i" path="res://Art/door_314.png" id="2_slgm7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwh86"]
+atlas = ExtResource("2_slgm7")
+region = Rect2(0, 0, 245, 355)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cyg0"]
+atlas = ExtResource("2_slgm7")
+region = Rect2(245, 0, 245, 355)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8q3cx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwh86")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cyg0")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Door1" type="Node2D"]
+script = ExtResource("1_5ik7k")
+
+[node name="image" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8q3cx")
+animation = &"closed"

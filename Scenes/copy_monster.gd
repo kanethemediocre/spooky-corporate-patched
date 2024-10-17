@@ -17,9 +17,9 @@ func _physics_process(delta: float) -> void:
 			yvel = Gvars.py-position.y#todo difference in y position player to monster
 	velocity.x = xvel
 	velocity.y = yvel
-	print(xvel)
-	print(yvel)
-	print(".")
+	#print(xvel)
+	#print(yvel)
+	#print(".")
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -31,3 +31,10 @@ func _physics_process(delta: float) -> void:
 	
 	position += velocity * delta
 	move_and_slide()
+
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.pressed: #and event.button_index == BUTTON_LEFT:
+		Gvars.CurrentMessage = "Mr. Epson is in a mood, I better stay away"
+		Gvars.MessageTime = Gvars.time
+	 #queue_free()

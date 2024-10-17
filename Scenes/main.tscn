@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=16 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_7emmv"]
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bhqe4ecrawpkr" path="res://Scenes/sharon_door_trigger.tscn" id="8_mkjxo"]
 [ext_resource type="PackedScene" uid="uid://bdwkn1gy0sqmc" path="res://Scenes/sharon_door.tscn" id="8_tbj5v"]
 [ext_resource type="PackedScene" uid="uid://47iv2jh5n8rk" path="res://Scenes/copy_monster.tscn" id="11_ulbub"]
+[ext_resource type="PackedScene" uid="uid://wgquxgh4ce6l" path="res://Scenes/time_cam_qr.tscn" id="12_amvhy"]
+[ext_resource type="Script" path="res://Scenes/time_cam_trigger_1.gd" id="13_3gf6j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_08qhs"]
 animations = [{
@@ -22,6 +24,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t36xu"]
+size = Vector2(355, 313)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7emmv")
@@ -65,3 +70,13 @@ position = Vector2(4532, 289)
 
 [node name="CopyMonster" parent="." instance=ExtResource("11_ulbub")]
 position = Vector2(5126, -426)
+
+[node name="TimeCamQR" parent="." instance=ExtResource("12_amvhy")]
+position = Vector2(3908, 269)
+
+[node name="TimeCamTrigger1" type="Area2D" parent="."]
+script = ExtResource("13_3gf6j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TimeCamTrigger1"]
+position = Vector2(3904.5, 498.5)
+shape = SubResource("RectangleShape2D_t36xu")

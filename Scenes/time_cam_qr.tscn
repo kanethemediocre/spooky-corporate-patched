@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://wgquxgh4ce6l"]
+
+[ext_resource type="Script" path="res://Scenes/time_cam_qr.gd" id="1_kgepb"]
+[ext_resource type="Texture2D" uid="uid://l3dihw4pocut" path="res://Art/TimeCamQR.png" id="1_o7xgj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc2tp"]
+size = Vector2(256, 160)
+
+[node name="TimeCamQR" type="Area2D"]
+script = ExtResource("1_kgepb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sc2tp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o7xgj")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

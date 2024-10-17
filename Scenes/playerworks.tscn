@@ -1,9 +1,10 @@
-[gd_scene load_steps=57 format=3 uid="uid://b411u13bricjf"]
+[gd_scene load_steps=58 format=3 uid="uid://b411u13bricjf"]
 
 [ext_resource type="Script" path="res://Scenes/playerworks.gd" id="1_sl1oe"]
 [ext_resource type="Texture2D" uid="uid://ke2qhwmrud2t" path="res://Art/speechbubble1.png" id="3_hghet"]
 [ext_resource type="Texture2D" uid="uid://dd4d8h5x2sv73" path="res://Art/character.png" id="3_nlbw0"]
 [ext_resource type="Texture2D" uid="uid://dlmu106yr0fes" path="res://icon.svg" id="4_ic4iu"]
+[ext_resource type="AudioStream" uid="uid://b36scmmjexkrp" path="res://Audio/SFX/you_died.ogg" id="5_2japx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhjg"]
 size = Vector2(121, 203)
@@ -421,5 +422,8 @@ texture = ExtResource("4_ic4iu")
 position = Vector2(-154, -134)
 scale = Vector2(0.093, 0.1)
 sprite_frames = SubResource("SpriteFrames_tyw7n")
+
+[node name="Deathsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2japx")
 
 [connection signal="area_entered" from="Interaction Area" to="." method="_on_area_entered"]

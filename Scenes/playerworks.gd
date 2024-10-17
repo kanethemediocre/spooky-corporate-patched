@@ -118,6 +118,7 @@ func _start_death_sequence() -> void:
 	$AnimatedSprite2D.animation = "death"
 	dying = true
 	deadtime = Gvars.time
+	$Deathsound.play()
 	# For now just hide the player.
 	#hide()
 	pass

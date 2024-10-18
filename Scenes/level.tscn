@@ -136,7 +136,7 @@ size = Vector2(3060.5, 252)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agy6k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsjrn"]
-size = Vector2(155, 2427)
+size = Vector2(155, 2073.5)
 
 [node name="Level" type="Node"]
 
@@ -252,7 +252,7 @@ position = Vector2(-503, 5200.5)
 shape = SubResource("RectangleShape2D_g2r4t")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="confwalls"]
-position = Vector2(845.25, 5144.5)
+position = Vector2(864, 4695)
 shape = SubResource("RectangleShape2D_t3x2y")
 
 [node name="AccountingBackground" type="Sprite2D" parent="."]
@@ -351,7 +351,7 @@ shape = SubResource("RectangleShape2D_k2jp6")
 shape = SubResource("RectangleShape2D_agy6k")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="HRWalls"]
-position = Vector2(4643, 3045)
+position = Vector2(4643, 2868.25)
 shape = SubResource("RectangleShape2D_vsjrn")
 
 [node name="Door2" parent="." instance=ExtResource("7_xaijk")]
@@ -439,3 +439,6 @@ position = Vector2(-586, -566)
 
 [node name="ghost_one" parent="." instance=ExtResource("11_nx12a")]
 position = Vector2(5078, 2351)
+
+[node name="ghost_one2" parent="." instance=ExtResource("11_nx12a")]
+position = Vector2(5248, 1140)

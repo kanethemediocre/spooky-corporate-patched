@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bjutt73v4jpth"]
+
+[ext_resource type="Texture2D" uid="uid://ddn6scabvip3d" path="res://Art/door_temp.png" id="1_564vi"]
+[ext_resource type="Script" path="res://Scenes/doorworks.gd" id="1_txo5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npgga"]
+size = Vector2(39.5, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncuia"]
+size = Vector2(205, 97)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv5nt"]
+atlas = ExtResource("1_564vi")
+region = Rect2(0, 0, 386, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfjbg"]
+atlas = ExtResource("1_564vi")
+region = Rect2(386, 0, 386, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_08qjs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv5nt")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfjbg")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmr2s"]
+size = Vector2(202, 297)
+
+[node name="Doorworks" type="StaticBody2D"]
+script = ExtResource("1_txo5c")
+
+[node name="opencollide" type="CollisionShape2D" parent="."]
+position = Vector2(-125, 128)
+shape = SubResource("RectangleShape2D_npgga")
+
+[node name="closedcollide" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ncuia")
+
+[node name="image" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_08qjs")
+animation = &"closed"
+
+[node name="interact_area" type="Area2D" parent="."]
+
+[node name="interact_area" type="CollisionShape2D" parent="interact_area"]
+shape = SubResource("RectangleShape2D_nmr2s")
+
+[connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="interact_area" to="." method="_on_interact_area_body_exited"]

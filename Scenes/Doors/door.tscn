@@ -1,24 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmi7ms2d81msx"]
+[gd_scene load_steps=9 format=3 uid="uid://bmi7ms2d81msx"]
 
+[ext_resource type="Texture2D" uid="uid://ddn6scabvip3d" path="res://Art/door_temp.png" id="1_lm4m4"]
 [ext_resource type="Script" path="res://Scenes/Doors/door.gd" id="1_m4icf"]
-[ext_resource type="Texture2D" uid="uid://dgllofuu2wy5i" path="res://Art/door_314.png" id="2_qdtnm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nw4mr"]
-size = Vector2(197, 593)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgci2"]
+atlas = ExtResource("1_lm4m4")
+region = Rect2(0, 0, 386, 500)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2vepk"]
-atlas = ExtResource("2_qdtnm")
-region = Rect2(0, 0, 245, 355)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w5qpi"]
-atlas = ExtResource("2_qdtnm")
-region = Rect2(245, 0, 245, 355)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4a3u"]
+atlas = ExtResource("1_lm4m4")
+region = Rect2(386, 0, 386, 500)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2sudd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2vepk")
+"texture": SubResource("AtlasTexture_fgci2")
 }],
 "loop": true,
 "name": &"closed",
@@ -26,25 +23,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w5qpi")
+"texture": SubResource("AtlasTexture_e4a3u")
 }],
 "loop": true,
 "name": &"open",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbady"]
+size = Vector2(302, 151)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qftro"]
+size = Vector2(27, 139.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nw4mr"]
+size = Vector2(268, 593)
+
 [node name="Door" type="Area2D"]
 z_index = 1
 script = ExtResource("1_m4icf")
 
-[node name="interact_area" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 18)
-shape = SubResource("RectangleShape2D_nw4mr")
-debug_color = Color(1, 0, 0, 0.419608)
-
 [node name="image" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2sudd")
-animation = &"closed"
+animation = &"open"
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="closed_door_collision_box" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_jbady")
+
+[node name="open_door_collision_box" type="CollisionShape2D" parent="."]
+position = Vector2(-159, 116)
+shape = SubResource("RectangleShape2D_qftro")
+
+[node name="interact_area" type="Area2D" parent="."]
+position = Vector2(-1, 18)
+
+[node name="interact_area" type="CollisionShape2D" parent="interact_area"]
+shape = SubResource("RectangleShape2D_nw4mr")
+debug_color = Color(0.996532, 0, 0.184856, 0.42)
+
+[connection signal="body_entered" from="interact_area" to="." method="_on_interact_area_body_entered"]
+[connection signal="body_exited" from="interact_area" to="." method="_on_interact_area_body_exited"]

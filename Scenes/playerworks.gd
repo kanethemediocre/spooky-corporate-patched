@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name player
 
 
 #export allows us to set the speed value in the inspector

@@ -368,73 +368,73 @@ position = Vector2(1075, -173)
 
 [node name="Candy" type="Node" parent="."]
 
-[node name="CandyCorn" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5071, 3153)
 
-[node name="CandyCorn2" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn2" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(3550, 1444)
 
-[node name="CandyCorn3" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn3" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5099, 3357)
 
-[node name="CandyCorn4" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn4" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(3052, 507)
 
-[node name="CandyCorn5" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn5" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5212, 1476)
 
-[node name="CandyCorn6" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn6" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(3169, -38)
 
-[node name="CandyCorn7" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn7" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(2301, -383)
 
-[node name="CandyCorn8" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn8" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(1466, -381)
 
-[node name="CandyCorn9" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn9" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5065, 2945)
 
-[node name="CandyCorn10" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn10" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(863, -853)
 
-[node name="CandyCorn11" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn11" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5071, 2862)
 
-[node name="CandyCorn12" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn12" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5058, 3071)
 
-[node name="CandyCorn13" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn13" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(374, -750)
 
-[node name="CandyCorn14" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn14" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(3888, 3534)
 
-[node name="CandyCorn15" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn15" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(3024, 3691)
 
-[node name="CandyCorn16" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn16" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(1504, 2694)
 
-[node name="CandyCorn17" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn17" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5128, 3579)
 
-[node name="CandyCorn18" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn18" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(1553, 1053)
 
-[node name="CandyCorn19" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn19" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5189, 3913)
 
-[node name="CandyCorn20" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn20" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(4963, 3708)
 
-[node name="CandyCorn21" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn21" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(5335, 3752)
 
-[node name="CandyCorn22" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn22" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(-775, 625)
 
-[node name="CandyCorn23" parent="." instance=ExtResource("10_s5175")]
+[node name="CandyCorn23" parent="Candy" instance=ExtResource("10_s5175")]
 position = Vector2(-586, -566)
 
 [node name="ghost_one" parent="." instance=ExtResource("11_nx12a")]

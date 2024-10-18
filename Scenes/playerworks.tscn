@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://b411u13bricjf"]
+[gd_scene load_steps=76 format=3 uid="uid://b411u13bricjf"]
 
 [ext_resource type="Script" path="res://Scenes/playerworks.gd" id="1_sl1oe"]
 [ext_resource type="Texture2D" uid="uid://ke2qhwmrud2t" path="res://Art/speechbubble1.png" id="3_hghet"]
@@ -11,7 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://dnx5mieq84fr1" path="res://Art/candy_corn.png" id="8_22p7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhjg"]
-size = Vector2(121, 203)
+size = Vector2(121, 176.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhami"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(11520, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_octaj"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(13440, 3840, 1920, 1920)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yo3at"]
 atlas = ExtResource("3_nlbw0")
@@ -44,6 +52,30 @@ region = Rect2(11520, 3840, 1920, 1920)
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0nqx"]
 atlas = ExtResource("3_nlbw0")
 region = Rect2(13440, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wddoe"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(0, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tst8c"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(1920, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykrfi"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(3840, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyxwv"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(5760, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqojm"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(7680, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jim5q"]
+atlas = ExtResource("3_nlbw0")
+region = Rect2(9600, 3840, 1920, 1920)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_faf3s"]
 atlas = ExtResource("3_nlbw0")
@@ -112,6 +144,17 @@ region = Rect2(13440, 0, 1920, 1920)
 [sub_resource type="SpriteFrames" id="SpriteFrames_jfq7k"]
 animations = [{
 "frames": [{
+"duration": 12.0,
+"texture": SubResource("AtlasTexture_yhami")
+}, {
+"duration": 12.0,
+"texture": SubResource("AtlasTexture_octaj")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yo3at")
 }, {
@@ -139,6 +182,29 @@ animations = [{
 "loop": true,
 "name": &"death",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wddoe")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_tst8c")
+}, {
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_ykrfi")
+}, {
+"duration": 1.1,
+"texture": SubResource("AtlasTexture_kyxwv")
+}, {
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_gqojm")
+}, {
+"duration": 12.0,
+"texture": SubResource("AtlasTexture_jim5q")
+}],
+"loop": true,
+"name": &"dying",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -435,13 +501,14 @@ metadata/_edit_lock_ = true
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
+position = Vector2(0, 13.25)
 shape = SubResource("RectangleShape2D_1fhjg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
 sprite_frames = SubResource("SpriteFrames_jfq7k")
-animation = &"walk"
-frame_progress = 0.520996
+animation = &"dead"
+frame_progress = 0.0600792
 metadata/_edit_lock_ = true
 
 [node name="SpeechBubble" type="Sprite2D" parent="."]
@@ -497,3 +564,4 @@ scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_wdacf")
 
 [connection signal="area_entered" from="Interaction Area" to="." method="_on_area_entered"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

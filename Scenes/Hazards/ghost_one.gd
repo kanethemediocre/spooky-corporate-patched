@@ -1,5 +1,5 @@
 extends Area2D
-
+class_name GhostOne
 signal hit
 
 
@@ -19,5 +19,5 @@ func _on_body_entered(body: Node2D):
 	hit.emit()
 
 
-func _on_animated_sprite_2d_animation_looped() -> void:
+func _on_animated_sprite_2d_animation_looped():
 	$AnimatedSprite2D.animation = "dead"

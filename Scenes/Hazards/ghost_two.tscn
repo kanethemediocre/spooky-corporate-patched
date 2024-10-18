@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c1h26g3735x1n" path="res://Art/ghost.png" id="1_ijas7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yi66l"]
-size = Vector2(1063, 565)
+size = Vector2(1063, 781)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ratay"]
 atlas = ExtResource("1_ijas7")
@@ -52,7 +52,8 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_bdpda")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(38.5, 86.5)
+position = Vector2(38.5, 194.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yi66l")
 debug_color = Color(1, 0, 0, 0.419608)
 

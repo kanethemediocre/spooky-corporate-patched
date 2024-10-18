@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("pause"):
 			pause_menu.pause()
 		if dying:
-			if (Gvars.time - deadtime > 120):
+			if (Gvars.time - deadtime > 420):
 				dying = false
 				position.x = spawnx
 				position.y = spawny
@@ -132,11 +132,18 @@ func _on_area_entered(area: Area2D) -> void:
 		$Phone.visible = true
 		$PhoneVideo1.visible = true
 		Gvars.phonetime = Gvars.time
-func _start_death_sequence() -> void:
-	$AnimatedSprite2D.animation = "death"
+	if area is GhostOne:
+		_start_death_sequence()
+func _start_death_sequence():
+	$AnimatedSprite2D.animation = "dying"
 	dying = true
 	deadtime = Gvars.time
 	$Deathsound.play()
 	# For now just hide the player.
 	#hide()
-	pass
+
+
+func _on_animated_sprite_2d_animation_looped():
+	if dying:
+		$AnimatedSprite2D.animation = "dead"	
+		pass

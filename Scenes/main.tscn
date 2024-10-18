@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=17 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_7emmv"]
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bhqe4ecrawpkr" path="res://Scenes/sharon_door_trigger.tscn" id="8_mkjxo"]
 [ext_resource type="PackedScene" uid="uid://bdwkn1gy0sqmc" path="res://Scenes/sharon_door.tscn" id="8_tbj5v"]
 [ext_resource type="PackedScene" uid="uid://47iv2jh5n8rk" path="res://Scenes/copy_monster.tscn" id="11_ulbub"]
+[ext_resource type="PackedScene" uid="uid://buatg2r3m56d5" path="res://Scenes/copy_monster2.tscn" id="12_70e8w"]
 [ext_resource type="PackedScene" uid="uid://wgquxgh4ce6l" path="res://Scenes/time_cam_qr.tscn" id="12_amvhy"]
 [ext_resource type="Script" path="res://Scenes/time_cam_trigger_1.gd" id="13_3gf6j"]
 
@@ -70,6 +71,9 @@ position = Vector2(4532, 289)
 
 [node name="CopyMonster" parent="." instance=ExtResource("11_ulbub")]
 position = Vector2(5126, -426)
+
+[node name="CopyMonster2" parent="." instance=ExtResource("12_70e8w")]
+position = Vector2(293, -766)
 
 [node name="TimeCamQR" parent="." instance=ExtResource("12_amvhy")]
 position = Vector2(3908, 269)

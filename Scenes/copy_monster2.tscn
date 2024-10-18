@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://buatg2r3m56d5"]
+
+[ext_resource type="Script" path="res://Scenes/copy_monster.gd" id="1_xumvo"]
+[ext_resource type="Texture2D" uid="uid://c1h26g3735x1n" path="res://Art/ghost.png" id="2_rvfyu"]
+[ext_resource type="Script" path="res://Scenes/animated_sprite_2d.gd" id="3_4q3i4"]
+[ext_resource type="Script" path="res://Scenes/copy_monster_hurt_zone.gd" id="4_d3sfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cu7c"]
+size = Vector2(128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfu2f"]
+atlas = ExtResource("2_rvfyu")
+region = Rect2(9600, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e51v"]
+atlas = ExtResource("2_rvfyu")
+region = Rect2(11520, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krmfh"]
+atlas = ExtResource("2_rvfyu")
+region = Rect2(13440, 3840, 1920, 1920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gjan7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfu2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e51v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krmfh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmcq3"]
+size = Vector2(384, 384)
+
+[node name="CopyMonster2" type="CharacterBody2D"]
+input_pickable = true
+floor_block_on_wall = false
+script = ExtResource("1_xumvo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5cu7c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_gjan7")
+script = ExtResource("3_4q3i4")
+
+[node name="CopyMonsterHurtZone" type="Area2D" parent="."]
+script = ExtResource("4_d3sfg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CopyMonsterHurtZone"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_qmcq3")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

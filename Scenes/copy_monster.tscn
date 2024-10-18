@@ -1,43 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://47iv2jh5n8rk"]
+[gd_scene load_steps=11 format=3 uid="uid://47iv2jh5n8rk"]
 
-[ext_resource type="Texture2D" uid="uid://dexjfj3edc2cv" path="res://Art/HauntedCopierWalk4x1.png" id="1_328wr"]
 [ext_resource type="Script" path="res://Scenes/copy_monster.gd" id="1_g0unm"]
+[ext_resource type="Texture2D" uid="uid://c1h26g3735x1n" path="res://Art/ghost.png" id="2_iaxnw"]
 [ext_resource type="Script" path="res://Scenes/copy_monster_hurt_zone.gd" id="3_e27o5"]
 [ext_resource type="Script" path="res://Scenes/animated_sprite_2d.gd" id="3_tkect"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cu7c"]
 size = Vector2(128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_aq8m5"]
-atlas = ExtResource("1_328wr")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubb2a"]
+atlas = ExtResource("2_iaxnw")
+region = Rect2(7680, 3840, 1920, 1920)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8alo"]
-atlas = ExtResource("1_328wr")
-region = Rect2(256, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kotdw"]
+atlas = ExtResource("2_iaxnw")
+region = Rect2(5760, 3840, 1920, 1920)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wssqs"]
-atlas = ExtResource("1_328wr")
-region = Rect2(512, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_13kpd"]
-atlas = ExtResource("1_328wr")
-region = Rect2(768, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_va5vr"]
+atlas = ExtResource("2_iaxnw")
+region = Rect2(3840, 3840, 1920, 1920)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gjan7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_aq8m5")
+"texture": SubResource("AtlasTexture_ubb2a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d8alo")
+"texture": SubResource("AtlasTexture_kotdw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wssqs")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_13kpd")
+"texture": SubResource("AtlasTexture_va5vr")
 }],
 "loop": true,
 "name": &"default",
@@ -56,6 +49,7 @@ script = ExtResource("1_g0unm")
 shape = SubResource("RectangleShape2D_5cu7c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_gjan7")
 script = ExtResource("3_tkect")
 

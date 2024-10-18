@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnuxhtyc76h3a"]
+
+[ext_resource type="Texture2D" uid="uid://dnx5mieq84fr1" path="res://Art/candy_corn.png" id="1_fapdp"]
+[ext_resource type="Script" path="res://Scenes/Candy/candy_corn.gd" id="1_vv7js"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g4yr"]
+size = Vector2(291, 368)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc3ar"]
+atlas = ExtResource("1_fapdp")
+region = Rect2(0, 0, 920, 920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alxmx"]
+atlas = ExtResource("1_fapdp")
+region = Rect2(920, 0, 920, 920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cr7ak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc3ar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alxmx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CandyCorn" type="Area2D"]
+script = ExtResource("1_vv7js")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-39.5, -30)
+shape = SubResource("RectangleShape2D_4g4yr")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cr7ak")
+frame_progress = 0.691529
+speed_scale = 0.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

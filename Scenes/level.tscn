@@ -1,5 +1,6 @@
-[gd_scene load_steps=54 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=56 format=3 uid="uid://jlehwaifg3n3"]
 
+[ext_resource type="Script" path="res://Scenes/level.gd" id="1_jk4ih"]
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
 [ext_resource type="Texture2D" uid="uid://ccr5qs467ed8i" path="res://Art/floor_1_foreground.png" id="2_ir5kf"]
 [ext_resource type="Texture2D" uid="uid://c4fuveentejnn" path="res://Art/conferenceroombackground.png" id="3_6742c"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://djxnl4wrstag0" path="res://Scenes/Doors/door_3.tscn" id="9_px2hu"]
 [ext_resource type="PackedScene" uid="uid://bnuxhtyc76h3a" path="res://Scenes/Candy/candy_corn.tscn" id="10_s5175"]
 [ext_resource type="PackedScene" uid="uid://bekfkkexi3xio" path="res://Scenes/Hazards/ghost_one.tscn" id="11_nx12a"]
+[ext_resource type="PackedScene" uid="uid://cicmgpricdd81" path="res://Scenes/Hazards/ghost_two.tscn" id="12_fql6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -139,6 +141,7 @@ size = Vector2(3060.5, 252)
 size = Vector2(155, 2073.5)
 
 [node name="Level" type="Node"]
+script = ExtResource("1_jk4ih")
 
 [node name="background_image" type="Sprite2D" parent="."]
 texture = ExtResource("1_lqlnj")
@@ -440,5 +443,11 @@ position = Vector2(-586, -566)
 [node name="ghost_one" parent="." instance=ExtResource("11_nx12a")]
 position = Vector2(5078, 2351)
 
-[node name="ghost_one2" parent="." instance=ExtResource("11_nx12a")]
-position = Vector2(5248, 1140)
+[node name="GhostTwo" parent="." instance=ExtResource("12_fql6c")]
+position = Vector2(908, 660)
+
+[node name="GhostTwo2" parent="." instance=ExtResource("12_fql6c")]
+position = Vector2(2345, 2193)
+
+[node name="GhostTwo3" parent="." instance=ExtResource("12_fql6c")]
+position = Vector2(4026, 821)

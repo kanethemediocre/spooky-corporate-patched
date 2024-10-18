@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cicmgpricdd81"]
+
+[ext_resource type="Script" path="res://Scenes/Hazards/ghost_one.gd" id="1_bdpda"]
+[ext_resource type="Texture2D" uid="uid://c1h26g3735x1n" path="res://Art/ghost.png" id="1_ijas7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi66l"]
+size = Vector2(1063, 565)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ratay"]
+atlas = ExtResource("1_ijas7")
+region = Rect2(0, 3840, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_etfk2"]
+atlas = ExtResource("1_ijas7")
+region = Rect2(5760, 1920, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq5o1"]
+atlas = ExtResource("1_ijas7")
+region = Rect2(7680, 1920, 1920, 1920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ahah"]
+atlas = ExtResource("1_ijas7")
+region = Rect2(9600, 1920, 1920, 1920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_llah4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ratay")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etfk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq5o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ahah")
+}],
+"loop": true,
+"name": &"scare",
+"speed": 5.0
+}]
+
+[node name="GhostTwo" type="Area2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_bdpda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38.5, 86.5)
+shape = SubResource("RectangleShape2D_yi66l")
+debug_color = Color(1, 0, 0, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_llah4")
+animation = &"dead"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmdd2hys3p6nw"]
+
+[ext_resource type="Texture2D" uid="uid://dqm45330tvbqa" path="res://Art/Chair1DR.png" id="1_1r3ka"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a5qsv"]
+radius = 60.0
+
+[node name="Chair1DR" type="StaticBody2D"]
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_a5qsv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1r3ka")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dunhudykqn40i"]
+
+[ext_resource type="Texture2D" uid="uid://d1ytr1olxn07j" path="res://Art/Cactus1.png" id="1_o1ha7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8age7"]
+radius = 59.6657
+
+[node name="Cactus1" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8age7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -66)
+texture = ExtResource("1_o1ha7")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds467bobh2qt"]
+
+[ext_resource type="Texture2D" uid="uid://cho6ybb6hud8w" path="res://Art/Chair1UL.png" id="1_plext"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b608i"]
+radius = 60.0
+
+[node name="Chair1UL" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b608i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_plext")

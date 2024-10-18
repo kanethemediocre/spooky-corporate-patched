@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=18 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_7emmv"]
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://buatg2r3m56d5" path="res://Scenes/copy_monster2.tscn" id="12_70e8w"]
 [ext_resource type="PackedScene" uid="uid://wgquxgh4ce6l" path="res://Scenes/time_cam_qr.tscn" id="12_amvhy"]
 [ext_resource type="Script" path="res://Scenes/time_cam_trigger_1.gd" id="13_3gf6j"]
+[ext_resource type="PackedScene" uid="uid://dunhudykqn40i" path="res://Scenes/cactus_1.tscn" id="15_bhngn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_08qhs"]
 animations = [{
@@ -84,3 +85,6 @@ script = ExtResource("13_3gf6j")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TimeCamTrigger1"]
 position = Vector2(3904.5, 498.5)
 shape = SubResource("RectangleShape2D_t36xu")
+
+[node name="Cactus1" parent="." instance=ExtResource("15_bhngn")]
+position = Vector2(2419, -902)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://b411u13bricjf"]
+[gd_scene load_steps=67 format=3 uid="uid://b411u13bricjf"]
 
 [ext_resource type="Script" path="res://Scenes/playerworks.gd" id="1_sl1oe"]
 [ext_resource type="Texture2D" uid="uid://ke2qhwmrud2t" path="res://Art/speechbubble1.png" id="3_hghet"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://b36scmmjexkrp" path="res://Audio/SFX/you_died.ogg" id="5_2japx"]
 [ext_resource type="Texture2D" uid="uid://bn1mxidtti4pq" path="res://Art/wedge.png" id="6_0m56d"]
 [ext_resource type="Texture2D" uid="uid://qb6amg74naor" path="res://Art/SharonKey.png" id="7_ur51d"]
+[ext_resource type="Texture2D" uid="uid://dnx5mieq84fr1" path="res://Art/candy_corn.png" id="8_22p7l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhjg"]
 size = Vector2(121, 203)
@@ -376,6 +377,50 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4o0n"]
+atlas = ExtResource("6_0m56d")
+region = Rect2(0, 0, 920, 920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tg0l"]
+atlas = ExtResource("6_0m56d")
+region = Rect2(920, 0, 920, 920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqcly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4o0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tg0l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am2un"]
+atlas = ExtResource("8_22p7l")
+region = Rect2(0, 0, 920, 920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew0lj"]
+atlas = ExtResource("8_22p7l")
+region = Rect2(920, 0, 920, 920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdacf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am2un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew0lj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="playerworks" type="CharacterBody2D"]
 script = ExtResource("1_sl1oe")
 
@@ -433,14 +478,19 @@ position = Vector2(3, 158.5)
 scale = Vector2(2.76563, 0.507812)
 texture = ExtResource("4_ic4iu")
 
-[node name="iWedge" type="Sprite2D" parent="."]
-position = Vector2(-47, 158)
-scale = Vector2(0.207031, 0.195313)
-texture = ExtResource("6_0m56d")
-
 [node name="iSharonKey" type="Sprite2D" parent="."]
 position = Vector2(-108, 159)
 scale = Vector2(0.195313, 0.203125)
 texture = ExtResource("7_ur51d")
+
+[node name="iWedge" type="AnimatedSprite2D" parent="."]
+position = Vector2(-40, 159)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_lqcly")
+
+[node name="iCorn" type="AnimatedSprite2D" parent="."]
+position = Vector2(27, 160)
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_wdacf")
 
 [connection signal="area_entered" from="Interaction Area" to="." method="_on_area_entered"]

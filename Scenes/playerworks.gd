@@ -27,6 +27,8 @@ func _ready():
 	show()
 	$AnimatedSprite2D.play()
 	$PhoneVideo1.play()
+	$iWedge.play()
+	$iCorn.play()
 	$CollisionShape2D.disabled = false #This might not do anything
 	#hide()
 
@@ -40,6 +42,8 @@ func _process(delta):
 			$iWedge.visible = true
 		if Gvars.iSharonKey>0:
 			$iSharonKey.visible = true
+		if Gvars.iCorn>0:
+			$iCorn.visible = true
 	if (Gvars.time - Gvars.phonetime > 300):
 		$Phone.visible = false
 		$PhoneVideo1.visible = false
@@ -48,6 +52,7 @@ func _process(delta):
 		$Pocket.visible = false
 		$iWedge.visible = false
 		$iSharonKey.visible = false
+		$iCorn.visible = false
 		Gvars.phonetime = Gvars.time
 func _physics_process(delta: float) -> void:
 	if pause_menu.is_paused:

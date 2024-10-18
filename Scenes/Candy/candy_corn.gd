@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if is_visible():
+	if body is player and is_visible():
 		hide()
+		Gvars.iCorn = Gvars.iCorn + 1
 		candy_hit.emit()

@@ -37,6 +37,6 @@ position = Vector2(-11.5, -12)
 shape = SubResource("RectangleShape2D_fatt1")
 debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x02xt")
 frame_progress = 0.0360635

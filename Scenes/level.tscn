@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=50 format=3 uid="uid://jlehwaifg3n3"]
 
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
 [ext_resource type="Texture2D" uid="uid://ccr5qs467ed8i" path="res://Art/floor_1_foreground.png" id="2_ir5kf"]
@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d00wawl0gv8eh" path="res://Art/accountingbackground.png" id="4_pfoq2"]
 [ext_resource type="Texture2D" uid="uid://bt772856n2mdw" path="res://Art/complaintsbackground.png" id="5_2a4tj"]
 [ext_resource type="Texture2D" uid="uid://dpjrq22thp3bd" path="res://Art/HRBackground.png" id="5_pnahn"]
-[ext_resource type="PackedScene" uid="uid://v5kd5l8fe5kc" path="res://Scenes/Doors/door_1.tscn" id="7_obdvn"]
-[ext_resource type="PackedScene" uid="uid://dxrfup73eglq4" path="res://Scenes/Doors/door_2.tscn" id="8_ltkdc"]
+[ext_resource type="PackedScene" uid="uid://bmi7ms2d81msx" path="res://Scenes/Doors/door.tscn" id="7_xaijk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -351,10 +350,5 @@ shape = SubResource("RectangleShape2D_agy6k")
 position = Vector2(4643, 3045)
 shape = SubResource("RectangleShape2D_vsjrn")
 
-[node name="Door314" parent="." instance=ExtResource("7_obdvn")]
-z_index = 1
-position = Vector2(188, -190)
-
-[node name="Door315" parent="." instance=ExtResource("8_ltkdc")]
-z_index = 1
-position = Vector2(1073, -170)
+[node name="Door2" parent="." instance=ExtResource("7_xaijk")]
+position = Vector2(4094, 1353)

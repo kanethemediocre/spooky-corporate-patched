@@ -11,6 +11,7 @@
 
 [node name="Background Audio Loop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_l5km4")
+volume_db = -42.0
 autoplay = true
 
 [node name="Menu UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("credits_container", "main_container")]

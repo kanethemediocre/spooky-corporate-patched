@@ -10,17 +10,17 @@ size = Vector2(1063, 565)
 atlas = ExtResource("1_ijas7")
 region = Rect2(0, 3840, 1920, 1920)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_etfk2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibf6r"]
 atlas = ExtResource("1_ijas7")
-region = Rect2(5760, 1920, 1920, 1920)
+region = Rect2(0, 1920, 1920, 1920)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gq5o1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtclx"]
 atlas = ExtResource("1_ijas7")
-region = Rect2(7680, 1920, 1920, 1920)
+region = Rect2(1920, 1920, 1920, 1920)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ahah"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_snguy"]
 atlas = ExtResource("1_ijas7")
-region = Rect2(9600, 1920, 1920, 1920)
+region = Rect2(3840, 1920, 1920, 1920)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_llah4"]
 animations = [{
@@ -34,13 +34,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_etfk2")
+"texture": SubResource("AtlasTexture_ibf6r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gq5o1")
+"texture": SubResource("AtlasTexture_rtclx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6ahah")
+"texture": SubResource("AtlasTexture_snguy")
 }],
 "loop": true,
 "name": &"scare",
@@ -58,6 +58,6 @@ debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_llah4")
-animation = &"dead"
+animation = &"scare"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,17 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://12isitlxwfp4"]
+[gd_scene load_steps=7 format=3 uid="uid://12isitlxwfp4"]
 
 [ext_resource type="Texture2D" uid="uid://bn1mxidtti4pq" path="res://Art/wedge.png" id="1_l5pmc"]
 [ext_resource type="Script" path="res://Scenes/wedge_item.gd" id="1_njbh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fatt1"]
-size = Vector2(128, 128)
+size = Vector2(553, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j6ht"]
+atlas = ExtResource("1_l5pmc")
+region = Rect2(0, 0, 920, 920)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdnh1"]
+atlas = ExtResource("1_l5pmc")
+region = Rect2(920, 0, 920, 920)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x02xt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j6ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdnh1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="WedgeItem" type="Area2D"]
+scale = Vector2(0.125, 0.125)
 script = ExtResource("1_njbh1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11.5, -12)
 shape = SubResource("RectangleShape2D_fatt1")
+debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_l5pmc")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x02xt")
+frame_progress = 0.0360635

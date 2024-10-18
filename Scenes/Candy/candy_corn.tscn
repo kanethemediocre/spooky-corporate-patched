@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dnx5mieq84fr1" path="res://Art/candy_corn.png" id="1_fapdp"]
 [ext_resource type="Script" path="res://Scenes/Candy/candy_corn.gd" id="1_vv7js"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4g4yr"]
-size = Vector2(291, 368)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i20e"]
+size = Vector2(256, 370)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hc3ar"]
 atlas = ExtResource("1_fapdp")
@@ -29,16 +29,17 @@ animations = [{
 }]
 
 [node name="CandyCorn" type="Area2D"]
+scale = Vector2(0.125, 0.125)
 script = ExtResource("1_vv7js")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-39.5, -30)
-shape = SubResource("RectangleShape2D_4g4yr")
+position = Vector2(-58, -28)
+shape = SubResource("RectangleShape2D_8i20e")
 debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_cr7ak")
-frame_progress = 0.691529
+frame_progress = 0.383894
 speed_scale = 0.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

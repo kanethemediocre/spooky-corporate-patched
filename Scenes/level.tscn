@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=54 format=3 uid="uid://jlehwaifg3n3"]
 
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
 [ext_resource type="Texture2D" uid="uid://ccr5qs467ed8i" path="res://Art/floor_1_foreground.png" id="2_ir5kf"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://bmi7ms2d81msx" path="res://Scenes/Doors/door.tscn" id="7_xaijk"]
 [ext_resource type="PackedScene" uid="uid://bmp27g87c17q3" path="res://Scenes/Doors/door_2.tscn" id="8_7346m"]
 [ext_resource type="PackedScene" uid="uid://djxnl4wrstag0" path="res://Scenes/Doors/door_3.tscn" id="9_px2hu"]
+[ext_resource type="PackedScene" uid="uid://bnuxhtyc76h3a" path="res://Scenes/Candy/candy_corn.tscn" id="10_s5175"]
+[ext_resource type="PackedScene" uid="uid://bekfkkexi3xio" path="res://Scenes/Hazards/ghost_one.tscn" id="11_nx12a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -363,3 +365,77 @@ position = Vector2(187, -189)
 
 [node name="Door4" parent="." instance=ExtResource("9_px2hu")]
 position = Vector2(1075, -173)
+
+[node name="Candy" type="Node" parent="."]
+
+[node name="CandyCorn" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5071, 3153)
+
+[node name="CandyCorn2" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(3550, 1444)
+
+[node name="CandyCorn3" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5099, 3357)
+
+[node name="CandyCorn4" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(3052, 507)
+
+[node name="CandyCorn5" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5212, 1476)
+
+[node name="CandyCorn6" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(3169, -38)
+
+[node name="CandyCorn7" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(2301, -383)
+
+[node name="CandyCorn8" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(1466, -381)
+
+[node name="CandyCorn9" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5065, 2945)
+
+[node name="CandyCorn10" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(863, -853)
+
+[node name="CandyCorn11" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5071, 2862)
+
+[node name="CandyCorn12" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5058, 3071)
+
+[node name="CandyCorn13" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(374, -750)
+
+[node name="CandyCorn14" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(3888, 3534)
+
+[node name="CandyCorn15" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(3024, 3691)
+
+[node name="CandyCorn16" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(1504, 2694)
+
+[node name="CandyCorn17" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5128, 3579)
+
+[node name="CandyCorn18" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(1553, 1053)
+
+[node name="CandyCorn19" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5189, 3913)
+
+[node name="CandyCorn20" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(4963, 3708)
+
+[node name="CandyCorn21" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(5335, 3752)
+
+[node name="CandyCorn22" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(-775, 625)
+
+[node name="CandyCorn23" parent="." instance=ExtResource("10_s5175")]
+position = Vector2(-586, -566)
+
+[node name="ghost_one" parent="." instance=ExtResource("11_nx12a")]
+position = Vector2(5078, 2351)

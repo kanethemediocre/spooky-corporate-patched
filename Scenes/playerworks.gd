@@ -3,7 +3,7 @@ class_name player
 
 
 #export allows us to set the speed value in the inspector
-@export var speed = 400
+@export var speed = 700
 @export var pause_menu: PauseMenu # Pause menu to use.
 var screen_size # Size of the game window.
 var dying = false

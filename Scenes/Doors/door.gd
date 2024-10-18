@@ -30,11 +30,11 @@ func _process(delta: float) -> void:
 
 
 
-func _on_interact_area_body_entered(body: Node2D):
+func _on_body_entered(body: Node2D):
 	open_door()
 
 
 
 
-func _on_interact_area_body_exited(body: Node2D):
+func _on_body_exited(body: Node2D) -> void:
 	close_door()

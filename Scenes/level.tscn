@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=52 format=3 uid="uid://jlehwaifg3n3"]
 
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
 [ext_resource type="Texture2D" uid="uid://ccr5qs467ed8i" path="res://Art/floor_1_foreground.png" id="2_ir5kf"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bt772856n2mdw" path="res://Art/complaintsbackground.png" id="5_2a4tj"]
 [ext_resource type="Texture2D" uid="uid://dpjrq22thp3bd" path="res://Art/HRBackground.png" id="5_pnahn"]
 [ext_resource type="PackedScene" uid="uid://bmi7ms2d81msx" path="res://Scenes/Doors/door.tscn" id="7_xaijk"]
+[ext_resource type="PackedScene" uid="uid://bmp27g87c17q3" path="res://Scenes/Doors/door_2.tscn" id="8_a0vd4"]
+[ext_resource type="PackedScene" uid="uid://djxnl4wrstag0" path="res://Scenes/Doors/door_3.tscn" id="9_bojds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -132,7 +134,7 @@ size = Vector2(3060.5, 252)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agy6k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsjrn"]
-size = Vector2(155, 2427)
+size = Vector2(155, 2343.5)
 
 [node name="Level" type="Node"]
 
@@ -146,7 +148,6 @@ texture = ExtResource("2_ir5kf")
 metadata/_edit_lock_ = true
 
 [node name="Breakwalls" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(-898, -1098)
 metadata/_edit_lock_ = true
 
@@ -347,8 +348,17 @@ shape = SubResource("RectangleShape2D_k2jp6")
 shape = SubResource("RectangleShape2D_agy6k")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="HRWalls"]
-position = Vector2(4643, 3045)
+position = Vector2(4643, 3003.25)
 shape = SubResource("RectangleShape2D_vsjrn")
 
-[node name="Door2" parent="." instance=ExtResource("7_xaijk")]
-position = Vector2(4094, 1353)
+[node name="Door1" parent="." instance=ExtResource("7_xaijk")]
+position = Vector2(181, -189)
+
+[node name="Door2" parent="." instance=ExtResource("8_a0vd4")]
+position = Vector2(3416, 309)
+
+[node name="Door3" parent="." instance=ExtResource("9_bojds")]
+position = Vector2(1074, -171)
+
+[node name="Door4" parent="." instance=ExtResource("8_a0vd4")]
+position = Vector2(4552, 299)

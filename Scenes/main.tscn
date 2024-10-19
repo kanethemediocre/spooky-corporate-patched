@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://op36xqdbwu6g"]
+[gd_scene load_steps=19 format=3 uid="uid://op36xqdbwu6g"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_7emmv"]
 [ext_resource type="PackedScene" uid="uid://jlehwaifg3n3" path="res://Scenes/level.tscn" id="1_bdubd"]
+[ext_resource type="AudioStream" uid="uid://j0oi1mqp4eyt" path="res://Audio/ChicaGhoulMusic_241005.ogg" id="2_mxwxi"]
 [ext_resource type="PackedScene" uid="uid://c41j05v5ltj4f" path="res://Scenes/Menus/PauseMenu.tscn" id="3_ky1hj"]
 [ext_resource type="PackedScene" uid="uid://vrdntxt78k3k" path="res://Scenes/Hazards/HauntedProp.tscn" id="4_82u5g"]
 [ext_resource type="Texture2D" uid="uid://d2bfv41q5o3x2" path="res://Art/boo.png" id="5_bq1cj"]
@@ -32,6 +33,11 @@ size = Vector2(355, 313)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7emmv")
+
+[node name="BGM Audio Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mxwxi")
+volume_db = -40.0
+autoplay = true
 
 [node name="Pause Menu" parent="." instance=ExtResource("3_ky1hj")]
 

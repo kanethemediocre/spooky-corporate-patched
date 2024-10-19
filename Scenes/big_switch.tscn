@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bakm33xhhebbn"]
+
+[ext_resource type="Texture2D" uid="uid://ddlariuo6peyx" path="res://Art/BigSwitchOn.png" id="1_a0tqo"]
+[ext_resource type="Script" path="res://Scenes/big_switch.gd" id="1_dtj3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oe6p1"]
+size = Vector2(200, 200)
+
+[node name="BigSwitch" type="Area2D"]
+script = ExtResource("1_dtj3m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oe6p1")
+
+[node name="SwitchOn" type="Sprite2D" parent="."]
+texture = ExtResource("1_a0tqo")
+
+[node name="SwitchOff" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("1_a0tqo")

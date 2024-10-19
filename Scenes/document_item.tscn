@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwx2ubufmkjdp"]
+
+[ext_resource type="Texture2D" uid="uid://ccs8d3wf8fgp8" path="res://Art/Document.png" id="1_7roxb"]
+[ext_resource type="Script" path="res://Scenes/document_item.gd" id="1_dgems"]
+[ext_resource type="Texture2D" uid="uid://esik7nviyi6s" path="res://Art/Document2.png" id="2_6k6oa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymyts"]
+size = Vector2(200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxg0t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7roxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6k6oa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DocumentItem" type="Area2D"]
+script = ExtResource("1_dgems")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ymyts")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qxg0t")
+frame_progress = 0.629159

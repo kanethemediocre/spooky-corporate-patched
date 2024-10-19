@@ -31,6 +31,7 @@ func _ready():
 	$PhoneVideo1.play()
 	$iWedge.play()
 	$iCorn.play()
+	$iDocument.play()
 	$CollisionShape2D.disabled = false #This might not do anything
 	#hide()
 
@@ -46,6 +47,8 @@ func _process(delta):
 			$iSharonKey.visible = true
 		if Gvars.iCorn>0:
 			$iCorn.visible = true
+		if Gvars.iDocument>0:
+			$iDocument.visible = true
 	if (Gvars.time - Gvars.phonetime > 300):
 		$Phone.visible = false
 		$PhoneVideo1.visible = false

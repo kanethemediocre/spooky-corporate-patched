@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://buatg2r3m56d5"]
+[gd_scene load_steps=12 format=3 uid="uid://buatg2r3m56d5"]
 
 [ext_resource type="Script" path="res://Scenes/copy_monster.gd" id="1_xumvo"]
+[ext_resource type="AudioStream" uid="uid://b3iexvk4p3tme" path="res://Audio/SFX/Enemies/Copy Monster/HauntedCopyMachineIdle_Loop.ogg" id="2_6ymxp"]
 [ext_resource type="Texture2D" uid="uid://c1h26g3735x1n" path="res://Art/ghost.png" id="2_rvfyu"]
 [ext_resource type="Script" path="res://Scenes/animated_sprite_2d.gd" id="3_4q3i4"]
 [ext_resource type="Script" path="res://Scenes/copy_monster_hurt_zone.gd" id="4_d3sfg"]
@@ -44,6 +45,13 @@ size = Vector2(384, 384)
 input_pickable = true
 floor_block_on_wall = false
 script = ExtResource("1_xumvo")
+
+[node name="Monster Audio Player" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6ymxp")
+volume_db = -17.002
+autoplay = true
+max_distance = 1500.0
+attenuation = 2.2974
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5cu7c")

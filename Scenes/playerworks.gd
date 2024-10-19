@@ -52,13 +52,13 @@ func _process(delta):
 	if (Gvars.time - Gvars.phonetime > 300):
 		$Phone.visible = false
 		$PhoneVideo1.visible = false
-		Gvars.phonetime = Gvars.time
+		#Gvars.phonetime = Gvars.time
 	if (Gvars.time - Gvars.inventorytime > 200):
 		$Pocket.visible = false
 		$iWedge.visible = false
 		$iSharonKey.visible = false
 		$iCorn.visible = false
-		Gvars.phonetime = Gvars.time
+		#Gvars.phonetime = Gvars.time
 func _physics_process(delta: float) -> void:
 	current_step_audio_cooldown -= delta
 	

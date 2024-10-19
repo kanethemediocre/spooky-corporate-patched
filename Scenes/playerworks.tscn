@@ -614,6 +614,7 @@ scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_wdacf")
 
 [node name="iDocument" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(73, 161)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_wghay")

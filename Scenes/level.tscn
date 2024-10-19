@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=61 format=3 uid="uid://jlehwaifg3n3"]
 
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_jk4ih"]
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cicmgpricdd81" path="res://Scenes/Hazards/ghost_two.tscn" id="12_fql6c"]
 [ext_resource type="PackedScene" uid="uid://ds467bobh2qt" path="res://Scenes/chair_1ul.tscn" id="14_mq80v"]
 [ext_resource type="PackedScene" uid="uid://dmdd2hys3p6nw" path="res://Scenes/chair_1dr.tscn" id="15_uteiq"]
+[ext_resource type="PackedScene" uid="uid://bk7w6c1ncf7x6" path="res://Scenes/gladys.tscn" id="16_aux57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -81,7 +82,7 @@ size = Vector2(140.5, 1239.5)
 size = Vector2(190, 647)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3x2y"]
-size = Vector2(211.5, 497)
+size = Vector2(214.75, 394.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f085o"]
 size = Vector2(1426, 198)
@@ -141,6 +142,12 @@ size = Vector2(3060.5, 252)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsjrn"]
 size = Vector2(155, 2073.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocf2y"]
+size = Vector2(786, 332)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvaew"]
+size = Vector2(231, 162.5)
 
 [node name="Level" type="Node"]
 script = ExtResource("1_jk4ih")
@@ -257,7 +264,7 @@ position = Vector2(-503, 5200.5)
 shape = SubResource("RectangleShape2D_g2r4t")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="confwalls"]
-position = Vector2(864, 4695)
+position = Vector2(878.625, 5197.25)
 shape = SubResource("RectangleShape2D_t3x2y")
 
 [node name="AccountingBackground" type="Sprite2D" parent="."]
@@ -358,6 +365,14 @@ shape = SubResource("RectangleShape2D_agy6k")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="HRWalls"]
 position = Vector2(4643, 2868.25)
 shape = SubResource("RectangleShape2D_vsjrn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="HRWalls"]
+position = Vector2(3548, 3021)
+shape = SubResource("RectangleShape2D_ocf2y")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="HRWalls"]
+position = Vector2(3562.5, 3242.75)
+shape = SubResource("RectangleShape2D_bvaew")
 
 [node name="Door2" parent="." instance=ExtResource("7_xaijk")]
 position = Vector2(3417, 306)
@@ -460,3 +475,7 @@ position = Vector2(1636, -438)
 [node name="Chair1DR" parent="." instance=ExtResource("15_uteiq")]
 position = Vector2(2244, -104)
 rotation = 1.34041
+
+[node name="Gladys" parent="." instance=ExtResource("16_aux57")]
+position = Vector2(3492, 3065)
+metadata/_edit_lock_ = true

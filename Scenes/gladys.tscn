@@ -1,13 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bk7w6c1ncf7x6"]
+[gd_scene load_steps=9 format=3 uid="uid://bk7w6c1ncf7x6"]
 
-[ext_resource type="Texture2D" uid="uid://c4dftg4u0xsm1" path="res://Art/Gladis0.png" id="1_f503c"]
-[ext_resource type="Texture2D" uid="uid://c4vvkyr1smfoo" path="res://Art/Gladis1.png" id="2_3bgvv"]
-[ext_resource type="Texture2D" uid="uid://b1eewbbq2vtur" path="res://Art/Gladis2.png" id="3_3r1ty"]
-[ext_resource type="Texture2D" uid="uid://dkbwhsyrib1lh" path="res://Art/Gladis3.png" id="4_bh6er"]
-[ext_resource type="Texture2D" uid="uid://cbxof7tesxnqt" path="res://Art/Gladis4.png" id="5_h4p1v"]
+[ext_resource type="Script" path="res://Scenes/gladys.gd" id="1_14yxy"]
+[ext_resource type="Texture2D" uid="uid://cq17emxih8oye" path="res://Art/Gladis0.png" id="1_f503c"]
+[ext_resource type="Texture2D" uid="uid://c4svbcisov67" path="res://Art/Gladis1.png" id="2_3bgvv"]
+[ext_resource type="Texture2D" uid="uid://cd7rykc8j6ssl" path="res://Art/Gladis2.png" id="3_3r1ty"]
+[ext_resource type="Texture2D" uid="uid://dewws7vlw370i" path="res://Art/Gladis3.png" id="4_bh6er"]
+[ext_resource type="Texture2D" uid="uid://8aihv8sw8ii0" path="res://Art/Gladis4.png" id="5_h4p1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07kk7"]
-size = Vector2(500, 300)
+size = Vector2(361, 747)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4waff"]
 animations = [{
@@ -33,10 +34,13 @@ animations = [{
 }]
 
 [node name="Gladys" type="Area2D"]
+script = ExtResource("1_14yxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-249, 0)
 shape = SubResource("RectangleShape2D_07kk7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4waff")
 frame_progress = 0.260181
+metadata/_edit_lock_ = true

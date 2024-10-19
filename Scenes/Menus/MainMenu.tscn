@@ -65,36 +65,73 @@ offset_right = 99.0
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 60
 
-[node name="Programmers Heading" type="Label" parent="Menu UI/Credits Roll"]
+[node name="In House" type="VBoxContainer" parent="Menu UI/Credits Roll"]
+layout_mode = 2
+
+[node name="Artists" type="VBoxContainer" parent="Menu UI/Credits Roll/In House"]
+layout_mode = 2
+
+[node name="Artists Heading" type="Label" parent="Menu UI/Credits Roll/In House/Artists"]
 layout_mode = 2
 theme = ExtResource("3_ufib3")
-text = "Programming"
+text = "Art + Animation"
+horizontal_alignment = 1
 
-[node name="Programmers Body" type="Label" parent="Menu UI/Credits Roll"]
+[node name="Artists Body" type="Label" parent="Menu UI/Credits Roll/In House/Artists"]
 layout_mode = 2
 theme = ExtResource("4_glyhc")
-text = "Hello World"
+text = "maria_antoinette"
+horizontal_alignment = 1
 
-[node name="Artists Heading" type="Label" parent="Menu UI/Credits Roll"]
+[node name="Audio" type="VBoxContainer" parent="Menu UI/Credits Roll/In House"]
 layout_mode = 2
-theme = ExtResource("3_ufib3")
-text = "Art"
 
-[node name="Artists Body" type="Label" parent="Menu UI/Credits Roll"]
-layout_mode = 2
-theme = ExtResource("4_glyhc")
-text = "Hello World"
-
-[node name="Audio Heading" type="Label" parent="Menu UI/Credits Roll"]
+[node name="Audio Heading" type="Label" parent="Menu UI/Credits Roll/In House/Audio"]
 layout_mode = 2
 theme = ExtResource("3_ufib3")
 text = "Audio"
+horizontal_alignment = 1
 
-[node name="Audio Body" type="Label" parent="Menu UI/Credits Roll"]
+[node name="Audio Body" type="Label" parent="Menu UI/Credits Roll/In House/Audio"]
 layout_mode = 2
 theme = ExtResource("4_glyhc")
-text = "Hello World"
+text = "Matt Kase"
+horizontal_alignment = 1
+
+[node name="Programmers" type="VBoxContainer" parent="Menu UI/Credits Roll/In House"]
+layout_mode = 2
+
+[node name="Programmers Heading" type="Label" parent="Menu UI/Credits Roll/In House/Programmers"]
+layout_mode = 2
+theme = ExtResource("3_ufib3")
+text = "Programming"
+horizontal_alignment = 1
+
+[node name="Programmers Body" type="Label" parent="Menu UI/Credits Roll/In House/Programmers"]
+layout_mode = 2
+theme = ExtResource("4_glyhc")
+text = "Andrew Kane
+Jethro Schoppenhorst
+"
+horizontal_alignment = 1
+
+[node name="External Resources" type="VBoxContainer" parent="Menu UI/Credits Roll"]
+layout_mode = 2
+
+[node name="Resources Heading" type="Label" parent="Menu UI/Credits Roll/External Resources"]
+layout_mode = 2
+theme = ExtResource("3_ufib3")
+text = "Fonts"
+horizontal_alignment = 1
+
+[node name="Resources Body" type="Label" parent="Menu UI/Credits Roll/External Resources"]
+layout_mode = 2
+theme = ExtResource("4_glyhc")
+text = "Midnight Minutes - https://fontbundles.net/rvst
+"
+horizontal_alignment = 1
 
 [node name="Back Button" type="Button" parent="Menu UI/Credits Roll"]
 layout_mode = 2

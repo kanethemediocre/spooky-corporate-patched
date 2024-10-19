@@ -1,4 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://cu0pw7n870jsv"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cu0pw7n870jsv"]
+
+[ext_resource type="FontFile" uid="uid://cjj5ow5ei8idq" path="res://Fonts/midnight_minutes/MidnightMinutes_DEMO.otf" id="1_amn4m"]
 
 [resource]
-default_font_size = 50
+default_font = ExtResource("1_amn4m")
+default_font_size = 100

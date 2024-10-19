@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/playerworks.gd" id="1_sl1oe"]
 [ext_resource type="Texture2D" uid="uid://ke2qhwmrud2t" path="res://Art/speechbubble1.png" id="3_hghet"]
 [ext_resource type="Texture2D" uid="uid://dd4d8h5x2sv73" path="res://Art/character.png" id="3_nlbw0"]
-[ext_resource type="Texture2D" uid="uid://bvbujdya6mqqn" path="res://Art/phone_background.png" id="4_0piav"]
+[ext_resource type="Texture2D" uid="uid://ced4ifiejk0sw" path="res://Art/phone_background.png" id="4_0piav"]
 [ext_resource type="AudioStream" uid="uid://b36scmmjexkrp" path="res://Audio/SFX/you_died.ogg" id="5_2japx"]
 [ext_resource type="Texture2D" uid="uid://bn1mxidtti4pq" path="res://Art/wedge.png" id="6_0m56d"]
 [ext_resource type="Texture2D" uid="uid://cvygmbs32ejf4" path="res://Art/pocket.png" id="6_6dxo0"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=62 format=3 uid="uid://jlehwaifg3n3"]
 
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_jk4ih"]
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ds467bobh2qt" path="res://Scenes/chair_1ul.tscn" id="14_mq80v"]
 [ext_resource type="PackedScene" uid="uid://dmdd2hys3p6nw" path="res://Scenes/chair_1dr.tscn" id="15_uteiq"]
 [ext_resource type="PackedScene" uid="uid://bk7w6c1ncf7x6" path="res://Scenes/gladys.tscn" id="16_aux57"]
+[ext_resource type="PackedScene" uid="uid://diyrj48gja4ca" path="res://Scenes/elevator_button.tscn" id="17_tw2u6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -479,3 +480,6 @@ rotation = 1.34041
 [node name="Gladys" parent="." instance=ExtResource("16_aux57")]
 position = Vector2(3492, 3065)
 metadata/_edit_lock_ = true
+
+[node name="ElevatorButton" parent="." instance=ExtResource("17_tw2u6")]
+position = Vector2(3447, -438)

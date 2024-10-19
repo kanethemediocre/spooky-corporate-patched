@@ -11,6 +11,7 @@ var px = 0
 var py = 0
 var phonetime = -1000
 var inventorytime = -1000
+var ElevatorOn = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

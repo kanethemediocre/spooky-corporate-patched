@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://jlehwaifg3n3"]
+[gd_scene load_steps=67 format=3 uid="uid://jlehwaifg3n3"]
 
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_jk4ih"]
 [ext_resource type="Texture2D" uid="uid://buss7malm43ok" path="res://Art/floor_1_background.png" id="1_lqlnj"]
@@ -16,9 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://cicmgpricdd81" path="res://Scenes/Hazards/ghost_two.tscn" id="12_fql6c"]
 [ext_resource type="PackedScene" uid="uid://ds467bobh2qt" path="res://Scenes/chair_1ul.tscn" id="14_mq80v"]
 [ext_resource type="PackedScene" uid="uid://dmdd2hys3p6nw" path="res://Scenes/chair_1dr.tscn" id="15_uteiq"]
-[ext_resource type="PackedScene" path="res://Scenes/gladys.tscn" id="16_aux57"]
-[ext_resource type="PackedScene" path="res://Scenes/elevator_button.tscn" id="17_tw2u6"]
-[ext_resource type="PackedScene" path="res://Scenes/document_item.tscn" id="18_kl7hh"]
+[ext_resource type="PackedScene" uid="uid://bk7w6c1ncf7x6" path="res://Scenes/gladys.tscn" id="16_aux57"]
+[ext_resource type="PackedScene" uid="uid://diyrj48gja4ca" path="res://Scenes/elevator_button.tscn" id="17_tw2u6"]
+[ext_resource type="PackedScene" uid="uid://cwx2ubufmkjdp" path="res://Scenes/document_item.tscn" id="18_kl7hh"]
+[ext_resource type="PackedScene" uid="uid://dunhudykqn40i" path="res://Scenes/cactus_1.tscn" id="20_uun8i"]
+[ext_resource type="Script" path="res://Scenes/elevator_trigger.gd" id="21_s58cr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6y7wf"]
 size = Vector2(2600, 200)
@@ -151,6 +153,9 @@ size = Vector2(786, 332)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvaew"]
 size = Vector2(231, 162.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5q1gl"]
+size = Vector2(1195, 122)
 
 [node name="Level" type="Node"]
 script = ExtResource("1_jk4ih")
@@ -483,17 +488,56 @@ position = Vector2(5078, 2351)
 position = Vector2(908, 660)
 
 [node name="GhostTwo2" parent="." instance=ExtResource("12_fql6c")]
-position = Vector2(2345, 2193)
+position = Vector2(1575, 2193)
 
 [node name="GhostTwo3" parent="." instance=ExtResource("12_fql6c")]
-position = Vector2(4164, 773)
+position = Vector2(4338, 1385)
+
+[node name="GhostTwo4" parent="." instance=ExtResource("12_fql6c")]
+position = Vector2(-107, 3594)
+
+[node name="GhostTwo5" parent="." instance=ExtResource("12_fql6c")]
+position = Vector2(926, 2678)
 
 [node name="Chair1UL" parent="." instance=ExtResource("14_mq80v")]
 position = Vector2(1636, -438)
 
+[node name="Chair1UL2" parent="." instance=ExtResource("14_mq80v")]
+position = Vector2(1420, 828)
+
+[node name="Chair1UL3" parent="." instance=ExtResource("14_mq80v")]
+position = Vector2(1627, 2848)
+rotation = -0.837758
+
+[node name="Chair1UL4" parent="." instance=ExtResource("14_mq80v")]
+position = Vector2(1627, 3270)
+
+[node name="Chair1UL5" parent="." instance=ExtResource("14_mq80v")]
+position = Vector2(1609, 3530)
+
+[node name="Chair1UL6" parent="." instance=ExtResource("14_mq80v")]
+position = Vector2(1573, 3054)
+rotation = -0.120428
+
 [node name="Chair1DR" parent="." instance=ExtResource("15_uteiq")]
 position = Vector2(2244, -104)
 rotation = 1.34041
+
+[node name="Chair1DR2" parent="." instance=ExtResource("15_uteiq")]
+position = Vector2(2235, 1423)
+rotation = 1.34041
+
+[node name="Chair1DR3" parent="." instance=ExtResource("15_uteiq")]
+position = Vector2(2217, 2132)
+rotation = 1.34041
+
+[node name="Chair1DR4" parent="." instance=ExtResource("15_uteiq")]
+position = Vector2(2298, 2832)
+rotation = 1.69995
+
+[node name="Chair1DR5" parent="." instance=ExtResource("15_uteiq")]
+position = Vector2(2245, 3545)
+rotation = 1.48353
 
 [node name="Gladys" parent="." instance=ExtResource("16_aux57")]
 position = Vector2(3492, 3065)
@@ -503,4 +547,23 @@ metadata/_edit_lock_ = true
 position = Vector2(3447, -438)
 
 [node name="DocumentItem" parent="." instance=ExtResource("18_kl7hh")]
-position = Vector2(5035, -762)
+position = Vector2(3786, 1432)
+
+[node name="Cactus1" parent="." instance=ExtResource("20_uun8i")]
+position = Vector2(1050, 1374)
+
+[node name="Cactus2" parent="." instance=ExtResource("20_uun8i")]
+position = Vector2(1068, 4239)
+
+[node name="Cactus3" parent="." instance=ExtResource("20_uun8i")]
+position = Vector2(1427, 4203)
+
+[node name="Cactus4" parent="." instance=ExtResource("20_uun8i")]
+position = Vector2(2406, 3206)
+
+[node name="ElevatorTrigger" type="Area2D" parent="."]
+script = ExtResource("21_s58cr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorTrigger"]
+position = Vector2(3407.5, -317)
+shape = SubResource("RectangleShape2D_5q1gl")

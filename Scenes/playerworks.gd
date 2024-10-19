@@ -150,6 +150,23 @@ func _on_area_entered(area: Area2D) -> void:
 		Gvars.phonetime = Gvars.time
 	if area is GhostOne:
 		_start_death_sequence()
+	if area is Gladys:
+		if Gvars.iDocument>0:
+			Gvars.ElevatorOn = true
+			Gvars.iDocument = 0
+			Gvars.CurrentMessage = "Huh, Gladys really does deny everything."
+			Gvars.MessageTime = Gvars.time
+			$LightningSound.play()
+		else:
+			Gvars.CurrentMessage = "Gosh she denies an awful lot of requests"
+			Gvars.MessageTime = Gvars.time
+	if area is ElevatorTrigger:
+		if Gvars.ElevatorOn:
+			Gvars.CurrentMessage = "I WIN!"
+			Gvars.MessageTime = Gvars.time
+		else:
+			Gvars.CurrentMessage = "The elevators are turned off for the night"
+			Gvars.MessageTime = Gvars.time
 func _start_death_sequence():
 	$AnimatedSprite2D.animation = "dying"
 	dying = true

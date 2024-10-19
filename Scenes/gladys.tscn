@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://bk7w6c1ncf7x6"]
+
+[ext_resource type="Texture2D" uid="uid://c4dftg4u0xsm1" path="res://Art/Gladis0.png" id="1_f503c"]
+[ext_resource type="Texture2D" uid="uid://c4vvkyr1smfoo" path="res://Art/Gladis1.png" id="2_3bgvv"]
+[ext_resource type="Texture2D" uid="uid://b1eewbbq2vtur" path="res://Art/Gladis2.png" id="3_3r1ty"]
+[ext_resource type="Texture2D" uid="uid://dkbwhsyrib1lh" path="res://Art/Gladis3.png" id="4_bh6er"]
+[ext_resource type="Texture2D" uid="uid://cbxof7tesxnqt" path="res://Art/Gladis4.png" id="5_h4p1v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07kk7"]
+size = Vector2(500, 300)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4waff"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f503c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3bgvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3r1ty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bh6er")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h4p1v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Gladys" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_07kk7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4waff")
+frame_progress = 0.260181

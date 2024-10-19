@@ -1,14 +1,38 @@
-[gd_scene load_steps=76 format=3 uid="uid://b411u13bricjf"]
+[gd_scene load_steps=87 format=3 uid="uid://b411u13bricjf"]
 
 [ext_resource type="Script" path="res://Scenes/playerworks.gd" id="1_sl1oe"]
+[ext_resource type="AudioStream" uid="uid://dgo6rqd6vpqd3" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-001.ogg" id="2_x62f0"]
+[ext_resource type="AudioStream" uid="uid://dxfrg6fec7kjd" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-002.ogg" id="3_bpv43"]
 [ext_resource type="Texture2D" uid="uid://ke2qhwmrud2t" path="res://Art/speechbubble1.png" id="3_hghet"]
 [ext_resource type="Texture2D" uid="uid://dd4d8h5x2sv73" path="res://Art/character.png" id="3_nlbw0"]
 [ext_resource type="Texture2D" uid="uid://ced4ifiejk0sw" path="res://Art/phone_background.png" id="4_0piav"]
+[ext_resource type="AudioStream" uid="uid://p6mfdqpvga74" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-003.ogg" id="4_m04kb"]
 [ext_resource type="AudioStream" uid="uid://b36scmmjexkrp" path="res://Audio/SFX/you_died.ogg" id="5_2japx"]
+[ext_resource type="AudioStream" uid="uid://be0cxe38t7j6h" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-004.ogg" id="5_u1bhp"]
 [ext_resource type="Texture2D" uid="uid://bn1mxidtti4pq" path="res://Art/wedge.png" id="6_0m56d"]
 [ext_resource type="Texture2D" uid="uid://cvygmbs32ejf4" path="res://Art/pocket.png" id="6_6dxo0"]
+[ext_resource type="AudioStream" uid="uid://ds3fh72vh2f0p" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-005.ogg" id="6_ugk5q"]
+[ext_resource type="AudioStream" uid="uid://dgwiy6nt6vk60" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-006.ogg" id="7_lntxw"]
 [ext_resource type="Texture2D" uid="uid://qb6amg74naor" path="res://Art/SharonKey.png" id="7_ur51d"]
 [ext_resource type="Texture2D" uid="uid://dnx5mieq84fr1" path="res://Art/candy_corn.png" id="8_22p7l"]
+[ext_resource type="AudioStream" uid="uid://cr5dxrx18hb60" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-007.ogg" id="8_npo6y"]
+[ext_resource type="AudioStream" uid="uid://c8tksm8ydvtos" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-008.ogg" id="9_cbdo6"]
+[ext_resource type="AudioStream" uid="uid://bf4nuuf6or4mf" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-009.ogg" id="10_jfrg0"]
+[ext_resource type="AudioStream" uid="uid://cb8ii8qqb8k7n" path="res://Audio/SFX/Footsteps/Carpet/Footsteps_Carpet-010.ogg" id="11_xv30d"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_uj7vh"]
+playback_mode = 1
+streams_count = 10
+stream_0/stream = ExtResource("2_x62f0")
+stream_1/stream = ExtResource("3_bpv43")
+stream_2/stream = ExtResource("4_m04kb")
+stream_3/stream = ExtResource("5_u1bhp")
+stream_4/stream = ExtResource("6_ugk5q")
+stream_5/stream = ExtResource("7_lntxw")
+stream_6/stream = ExtResource("8_npo6y")
+stream_7/stream = ExtResource("9_cbdo6")
+stream_8/stream = ExtResource("10_jfrg0")
+stream_9/stream = ExtResource("11_xv30d")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1fhjg"]
 size = Vector2(121, 176.5)
@@ -491,6 +515,14 @@ animations = [{
 [node name="playerworks" type="CharacterBody2D"]
 script = ExtResource("1_sl1oe")
 speed = 790
+step_audio_cooldown = 0.4
+
+[node name="Ears Audio Listener" type="AudioListener2D" parent="."]
+position = Vector2(0, -40)
+
+[node name="Footsteps Audio Player" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_uj7vh")
+volume_db = -16.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 13.5)

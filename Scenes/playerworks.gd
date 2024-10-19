@@ -5,11 +5,13 @@ class_name player
 #export allows us to set the speed value in the inspector
 @export var speed = 700
 @export var pause_menu: PauseMenu # Pause menu to use.
+@export var step_audio_cooldown: float = 1.0
 var screen_size # Size of the game window.
 var dying = false
 var deadtime = 0
 var spawnx = 4000
 var spawny = 1000
+var current_step_audio_cooldown: float = 0.0
 
 
 #func start(pos):
@@ -55,6 +57,8 @@ func _process(delta):
 		$iCorn.visible = false
 		Gvars.phonetime = Gvars.time
 func _physics_process(delta: float) -> void:
+	current_step_audio_cooldown -= delta
+	
 	if pause_menu.is_paused:
 		if Input.is_action_just_pressed("pause"):
 			pause_menu.unpause()
@@ -84,6 +88,10 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.play()
 				$AnimatedSprite2D.animation = "walk"
 				$AnimatedSprite2D.flip_h = velocity.x > 0
+				if current_step_audio_cooldown <= 0.0:
+					$"Footsteps Audio Player".play()
+					current_step_audio_cooldown = step_audio_cooldown
+				
 			else:
 				$AnimatedSprite2D.animation = "idle"
 			

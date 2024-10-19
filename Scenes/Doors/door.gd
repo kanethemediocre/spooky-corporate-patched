@@ -19,6 +19,7 @@ func close_door():
 
 func open_door():
 	$image.animation = "open"
+	$"Door Opened Audio Player".play()
 
 
 

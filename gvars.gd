@@ -1,7 +1,7 @@
 extends Node
 var iWedge = 0
 var iSharonKey = 0
-var iFlashlight = 0
+var iDocument = 0
 var iCorn = 0
 var NeedToOpenSharonDoor = false
 var CurrentMessage = "No message to display"

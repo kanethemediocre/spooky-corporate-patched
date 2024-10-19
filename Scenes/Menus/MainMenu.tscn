@@ -20,6 +20,7 @@ credits_container = NodePath("Credits Roll")
 main_container = NodePath("Main Buttons")
 
 [node name="Main Buttons" type="VBoxContainer" parent="Menu UI"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -53,7 +54,6 @@ theme = ExtResource("2_h2okw")
 text = "Quit"
 
 [node name="Credits Roll" type="VBoxContainer" parent="Menu UI"]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -69,6 +69,7 @@ theme_override_constants/separation = 60
 
 [node name="In House" type="VBoxContainer" parent="Menu UI/Credits Roll"]
 layout_mode = 2
+theme_override_constants/separation = 10
 
 [node name="Artists" type="VBoxContainer" parent="Menu UI/Credits Roll/In House"]
 layout_mode = 2
@@ -76,13 +77,14 @@ layout_mode = 2
 [node name="Artists Heading" type="Label" parent="Menu UI/Credits Roll/In House/Artists"]
 layout_mode = 2
 theme = ExtResource("3_ufib3")
-text = "Art + Animation"
+text = "Art and Animation"
 horizontal_alignment = 1
 
 [node name="Artists Body" type="Label" parent="Menu UI/Credits Roll/In House/Artists"]
 layout_mode = 2
 theme = ExtResource("4_glyhc")
-text = "maria_antoinette"
+text = "Andrew Kane
+maria_antoinette"
 horizontal_alignment = 1
 
 [node name="Audio" type="VBoxContainer" parent="Menu UI/Credits Roll/In House"]
